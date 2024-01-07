@@ -1,0 +1,155 @@
+/* navigation bar css */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+body {
+  background-color: #ffcf69;
+  color: #000000;
+}
+
+li,
+a,
+button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000000;
+  text-decoration: none;
+}
+
+header {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 25px 10% 0% 10%;
+}
+
+.logo {
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.nav_links li a {
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover {
+  color: #0088a9;
+}
+
+button {
+  margin-left: 20px;
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+.enroll-button {
+  padding: 15px 30px; /* Adjust the padding to make the button larger */
+  font-size: 18px; /* Increase the font size if needed */
+  color: yellow;
+}
+
+
+.content {
+  background-color: #ffffff;
+  padding: 50px;
+  position: centered;
+  margin-top: 200px;
+  transform: translateY(-50%);
+  top: 45%;
+}
+
+.content h1 {
+  font-size: 50px;
+  color: #ffc127;
+}
+.content p {
+  width: 420px;
+  padding-top: 15px;
+}
+
+.read-button {
+  margin-top: 50px;
+  padding: 30px 60px;
+  border: none;
+  background: #ffc127;
+  color: white;
+  border-radius: 7px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.custom-label {
+  color: black;           /* Text color: black */
+  background-color: skyblue; /* Background color: sky blue */
+  padding: 5px 50px;       /* Optional: Adjust padding for spacing */
+  border-radius: 5px;      /* Optional: Add rounded corners */
+  position: center;
+}
+
+.form-group {
+  font-size: 20px;
+  margin-bottom: 40px; /* Adjust the value to increase or decrease space */
+}
+
+.center-form {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: 100vh; /* Optional: Adjusts the height based on the viewport */
+}
+
+.form-container {
+  width: 100px; /* Optional: Set a maximum width for the form container */
+}
+
+input[type="text"] {
+  width: 200px; /* Adjust the size as needed */
+  padding: 8px; /* Optional: Add padding for better aesthetics */
+}
+
+
+        /* Styling Date Input */
+        input[type="date"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Styling Dropdown List */
+        select {
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Styling Choose File Input */
+        input[type="file"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+      
+        
