@@ -1,26 +1,27 @@
-<?php include_once('config.php');
- if(isset($_POST['submit'])){
-$fname=$_POST['fathername'];
-$mname=$_POST['mothername'];
-$pmobno=$_POST['parentmobno'];
-$pemail=$_POST['parentemail'];
-$cname=$_POST['cname'];
-$agegroup=$_POST['agegroup'];
-$erollprogram=$_POST['erollprogram'];
-$message=$_POST['message'];
-$enrollno=mt_rand(100000000,999999999);
+<?php
+include('config.php');
 
+if(isset($_POST['submit'])){
+    $father_name = $_POST["father_name"];
+    $mother_name = $_POST["mother_name"];
+    $parent_contact = $_POST["parent_contact"];
+    $parent_email = $_POST["parent_email"];
+    $child_name = $_POST["child_name"];
+    $age = $_POST["age"];
+    $program = $_POST["program"];
+    $message = $_POST["message"];
 
-$query=mysqli_query($con,"insert into tblenrollment(enrollmentNumber,fatherName,motherName,parentmobNo,parentEmail,childName,childAge,enrollProgram,message) values('$enrollno','$fname','$mname','$pmobno','$pemail','$cname','$agegroup','$erollprogram','$message')");
-if($query){
-echo "<script>alert('Enrollment Details sent successfully.');</script>";
-echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
-} else {
-echo "<script>alert('Something went wrong. Please try again.');</script>";
+    $query = "INSERT INTO enrollment (father_name, mother_name, parent_contact, parent_email, child_name, age, program, message) VALUES ('$father_name', '$mother_name', '$parent_contact', '$parent_email', '$child_name', '$age', '$program', '$message')";
+
+    $result = mysqli_query($conn, $query);
+    
+    if($result){
+        echo "<script>alert('Enrollment Details sent successfully.');</script>";
+        echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
+    } else {
+        echo "<script>alert('Something went wrong. Please try again.');</script>";
+    }
 }
-
- }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,19 +47,20 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
         </div>
         
         
-        <div class="fill">
+    <div class="fill">
+        <form method="post">
             <br>
             <h2>Start your Child’s Early Education</h2>
-            <input type="text" class="box" id="fathername" name="fathername" placeholder="Father Name" required>
-            <input type="text" class="box" id="mothername" name="mothername" placeholder="Mother Name" required>
+            <input type="text" class="box" id="fathername" name="father_name" placeholder="Father Name" required>
+            <input type="text" class="box" id="mothername" name="mother_name" placeholder="Mother Name" required>
             <br>
             <br>
-            <input type="text" class="box" id="parentmobno" name="parentmobno" placeholder="Parents Mobile No." required> 
-            <input type="email" class="box" id="parentemail" name="parentemail" placeholder="Parents Email" required>
+            <input type="text" class="box" id="parentmobno" name="parent_contact" placeholder="Parents Mobile No." required> 
+            <input type="email" class="box" id="parentemail" name="parent_email" placeholder="Parents Email" required>
             <br>
             <br>
-            <input type="text" class="box" id="cname" name="cname" placeholder="Child Name" required>
-            <select class="box" id="agegroup" name="agegroup"  required>
+            <input type="text" class="box" id="cname" name="child_name" placeholder="Child Name" required>
+            <select class="box" id="agegroup" name="age"  required>
                 <option value="">Select</option>
                 <option value="18 Month-3 Year">18 Month-2 Year</option>
                 <option value="2-3 Year">2-3 Year</option>
@@ -68,7 +70,7 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
             </select>
             <br>
             <br>
-            <select class="box2" id="erollprogram" name="erollprogram"  required>
+            <select class="box2" id="erollprogram" name="program"  required>
                 <option value="">Select a Program*</option>
                 <option value="PlayGroup-1.8 to 3 years">PlayGroup-1.8 to 3 years</option>
                 <option value="Nursery-2.5 to 4 years">Nursery-2.5 to 4 years</option>
@@ -84,6 +86,7 @@ echo "<script>alert('Something went wrong. Please try again.');</script>";
             <br>
             <br>
             <img class ="pic" src="pic.jpg">
+    </form>
 </div>
 
 
