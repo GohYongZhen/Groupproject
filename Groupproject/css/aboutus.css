@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+  background-color: #d8cfac;
+}
+
+#sectiontop {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: #d8cfac;
+}
+
+#sectiontop h1 {
+  font-size: 55px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+  color: black;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  background-color: #f3eede;
+}
+
+section p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 35px;
+}
+
+section img {
+  flex: 0 50%;
+  max-width: 50%;
+  height: auto;
+}
+section .about-content {
+  padding: 20px;
+  color: black;
+}
+
+section .about-content h2 {
+  font-size: 35px;
+  margin: 15px 0;
+  text-decoration: underline;
+}
+
+section .about-content p {
+  color: #666;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 15px 0;
+}
+
+.readmore {
+  display: inline-block;
+  background-color: tomato;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.readmore:hover {
+  background-color: orangered;
+}
