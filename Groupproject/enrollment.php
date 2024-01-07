@@ -85,7 +85,7 @@ if(isset($_POST['submit'])){
             <button class="box2 button" type="submit" name="submit">Submit</button>
             <br>
             <br>
-            <img class ="pic" src="pic.jpg">
+            <img class ="pic" src="images/pic.jpg">
     </form>
 </div>
 
