@@ -10,9 +10,14 @@ include("config.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Contact Us Form</title>
     <link rel="stylesheet" href="css/contact.css">
+<style>
+body{
+    background-color:black;
+}
+</style>
 </head>
 <body>
     <?php include('header.php');?>
@@ -37,20 +42,27 @@ include("config.php");
         </div>
     </div> 
     <!--trying to put contact and icons-->
-    <section class="facilities">
-        <div>
-          <img src="images/classroom.jpg">
-          <h3>Classroom</h3>
+    <section class="contact-card">
+        <div class="contact-info" style="color:black">
+            <div class="card">
+                <i class="card-icon far fa-envelope"></i>
+                <p>pre-school@example.com</p>
+            </div>
         </div>
-                <div>
-          <img src="images/playground.jpg">
-          <h3>Playground</h3>
-        </div>
-        <div>
-          <img src="images/library.jpg">
-          <h3>Library</h3>
 
-        </div>
+        <div class="contact-info" style="color:black">
+            <div class="card">
+                <i class="card-icon fa-solid fa-phone"></i>
+                <p>+6078828576</p>
+            </div>
+        </div>        
+
+        <div class="contact-info" style="color:black">
+            <div class="card">
+                <i class="card-icon fa fa-map-marker"></i>
+                <p>Kuala Lumpur Malaysia</p>
+            </div>
+        </div>          
     </section>
 
 
