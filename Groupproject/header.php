@@ -13,7 +13,7 @@
         <nav>
             <ul class="nav_links nav_bars">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="aboutus.php">About Us</a></li>
                 <li><a href="#">Classes</a></li>
                 <li><a href="#">Admin</a></li>
             </ul>
