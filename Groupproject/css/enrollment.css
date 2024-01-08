@@ -1,0 +1,53 @@
+.page-header { 
+    background-color:#e15232;
+    background-size: cover;
+    font-size: 30px;
+    text-align: center;
+    padding: 4rem;
+    height: 170px;
+    width: 1500px;
+    margin: 20px auto;
+  }
+  
+  .fill { 
+    background-color:#f5e6b1;
+    background-size: cover;
+    font-size: 30px;
+    text-align: center;
+    color: #000000;
+    width: 1500px;
+    margin: 20px auto;
+  }
+
+  h2 {color:#020c37}
+  
+  .box1{  position: relative;
+    width: 200px;
+    height: 50px;
+    right: 250px;}
+  
+  .box3{  position: relative;
+    width: 415px;
+    height: 50px;
+    right: 250px;}
+  
+  .button {background-color: #FE5D37;
+            color: #fff;}
+  
+.photo {position: absolute;
+      top: 681px;
+      right: 390px;
+      width: 30%;
+      height: auto;}
+
+.photoupload{
+  position: absolute;
+  top: 1030px;
+  right: 990px;
+}
+
+.photoname{
+  font-size: 20px;
+  position: absolute;
+  right: 1285px;
+}
