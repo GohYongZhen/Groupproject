@@ -31,7 +31,7 @@ include("config.php");
         
 
     <div form style="padding:0 10px;" method="POST" action="career_action.php" enctype="multipart/form-data"  onsubmit="return validateForm()" id="myForm">
-        <div class="center-form">
+      
              <div class="form-container">
       
                     <tr>
@@ -188,7 +188,7 @@ include("config.php");
            
                  </div>
          </div>
-    </div>
+    
                                 </div>
                         
 
