@@ -54,22 +54,22 @@ body{
     while($data=mysqli_fetch_array($result)){
         ?>
     <section class="contact-card">
-        <div class="contact-info" style="color:black">
-            <div class="card">
+        <div class="contact-info">
+            <div class="card" style="border-radius:50px">
                 <i class="card-icon far fa-envelope"></i>
                 <p><?php echo $data['email']?></p>
             </div>
         </div>
 
-        <div class="contact-info" style="color:black">
-            <div class="card">
+        <div class="contact-info">
+            <div class="card" style="border-radius:50px">
                 <i class="card-icon fa-solid fa-phone"></i>
                 <p><?php echo $data['phoneNumber']?></p>
             </div>
         </div>        
 
-        <div class="contact-info" style="color:black">
-            <div class="card">
+        <div class="contact-info">
+            <div class="card" style="border-radius:50px">
                 <i class="card-icon fa fa-map-marker"></i>
                 <p><?php echo $data['address']?></p>
             </div>
