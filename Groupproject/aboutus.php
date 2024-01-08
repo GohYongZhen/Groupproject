@@ -16,26 +16,32 @@ include("config.php");
 </head>
 <body>
     <?php include('header.php');?>
-    <div class="about-content">
-        <section id="sectiontop">
-            <h1>About Us</h1>
-            <p>Our historical story</p> </section>
-        <section>
-            <img src="images/about.jpg" alt="">
+    <?php
+        $sql = "SELECT * FROM page where pagetype='aboutus'";
+        $result = mysqli_query($conn,$sql);
+
+    while($data=mysqli_fetch_array($result)){
+        ?>
             <div class="about-content">
-                <h2>The story</h2>
-                <p>Playschool helps in building a strong foundation in social, pre-academics, and general life skills. 
-                    It helps in the development of a child’s emotional and personal growth and provides opportunities for children to learn in ways that sheerly 
-                    interests them and develop a strong sense of curiosity. 
-                    Playschool is important for your child as it helps in making the child habitual of the routine. The child also becomes aware of himself/herself and develops motor and cognitive skills. Playschools further enable the child to receive individual attention as the school has a very low student-to-teacher ratio. According to the report, only 48% of poor children who were born in 2001 "started school ready to learn, compared to 75% of children from middle-income families." Additionally, the amount of time parents of various socioeconomic statuses spend reading to their children has changed since the 1960s and 1970s. Parents with higher education read to their kids for up to an additional 30 minutes per day between 2010 and 2012, which adds up by the time the kids enter kindergarten.The kids are given the ‘right’ toys to play with according to their age of development which helps them to develop and learn the things that can be implemented or transferred onto them, such as changing the clothes of the doll, feeding the doll, etc. 
-                    BELOW:
-                </p>
+        <section id="sectiontop">
+            <h1><?php echo $data['pageTitle']?></h1>
+            <p>Our historical story</p> 
+        </section>
+        <section>
+            <img src="images/<?php echo $data['img_path']?>" alt="">
+            <div class="about-content">
+                <h2><?php echo $data['titleDescription']?></h2>
+                <p><?php echo $data['pageDescription']?></p>
 
                 <button class="readmore">Readmore</button>
             </div>
 
         </section>
     </div>
+    
+<?php } ?>
+
+
 
  <?php include('footer.php');?>
 </body>
