@@ -5,47 +5,15 @@
 body {
   background-color: #ffcf69;
   color: #000000;
+  margin: 10;
+
+  background: url("../images/job1.jpg");
+      background-size: cover; /* Adjust to cover the entire body */
+      background-position: center;
+
 }
 
-li,
-a,
-button {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: #000000;
-  text-decoration: none;
-}
 
-header {
-  background-color: #ffffff;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 25px 10% 0% 10%;
-}
-
-.logo {
-  cursor: pointer;
-  margin-right: auto;
-}
-
-.nav_links {
-  list-style: none;
-}
-
-.nav_links li {
-  display: inline-block;
-  padding: 10px 20px;
-}
-
-.nav_links li a {
-  transition: all 0.3s ease 0s;
-}
-
-.nav_links li a:hover {
-  color: #0088a9;
-}
 
 button {
   margin-left: 20px;
@@ -69,12 +37,13 @@ button:hover {
 
 
 .content {
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+
   padding: 50px;
   position: centered;
-  margin-top: 200px;
+  margin-top: 150px;
   transform: translateY(-50%);
-  top: 45%;
+  top: 0%;
 }
 
 .content h1 {
@@ -106,27 +75,40 @@ button:hover {
 }
 
 .form-group {
+  
+  margin-top: 0px;
   font-size: 20px;
-  margin-bottom: 40px; /* Adjust the value to increase or decrease space */
+  margin-bottom: 50px; /* Adjust the value to increase or decrease space */
 }
 
 .center-form {
   display: flex;
+  padding-top: 0%;
   justify-content:center;
   align-items: center;
-  height: 100vh; /* Optional: Adjusts the height based on the viewport */
+  height: auto; 
+  width:fit-content;/* Optional: Adjusts the height based on the viewport */
 }
-
+header {
+  
+  background-color: rgba(255, 207, 105, 0.85);
+  
+}
 .form-container {
-  width: 100px; /* Optional: Set a maximum width for the form container */
+
+  color:#ffffff;
+  padding-top: 0%;
+  padding-right:60%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  width:10%;
+  
 }
 
 input[type="text"] {
   width: 200px; /* Adjust the size as needed */
   padding: 8px; /* Optional: Add padding for better aesthetics */
 }
-
-
         /* Styling Date Input */
         input[type="date"] {
             padding: 8px;
@@ -134,10 +116,18 @@ input[type="text"] {
             border-radius: 4px;
         }
 
+        input[type="number"] {
+         
+          width: 80px;
+          height: 30px;
+
+          
+      }
+
         /* Styling Dropdown List */
         select {
             padding: 8px;
-            width: 100%;
+            width: 50%;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
