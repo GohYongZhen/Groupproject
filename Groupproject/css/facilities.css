@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+body,
+div,
+p {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Montserrat;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+h2 {
+  margin: 0vh 0 3vh 0;
+}
+
+.word p,
+h2 {
+  color: black;
+}
+
+/* Header/Blog Title */
+.head {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 100%;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: #95ceee;
+  padding: 20px;
+  margin-top: 10px;
+  border-top: 20px dashed #bfe1ff;
+  margin-bottom: 5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.image-container1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.image-container2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.realimg {
+  height: 200px; /* Set the desired height for your image */
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.right {
+  order: 1; /* Set the order to make it appear on the right side */
+}
+
+.left {
+  order: -2; /* Set the order to make it appear on the left side */
+}
