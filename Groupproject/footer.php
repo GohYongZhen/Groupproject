@@ -1,4 +1,8 @@
-
+<?php
+session_start();
+//database connection
+include("config.php");
+?>
 
 <head>
     <link rel="stylesheet" type="text/css" href="css/footer.css">
@@ -9,12 +13,18 @@
 </head>
 
     <footer>
+        <?php
+        $sql = "SELECT * FROM footer";
+        $result = mysqli_query($conn,$sql);
+
+    while($data=mysqli_fetch_array($result)){
+        ?>
         <div class="footer-container">
             <div class="footer-content">
                 <h3>Contact Us</h3>
-                <p>Email: Pre-School@example.com</p>
-                <p>Phone: +6078828576</p>
-                <p>Address: Kuala Lumpur Malaysia</p>
+                <p>Email: <?php echo $data['email']?></p>
+                <p>Phone: <?php echo $data['phoneNumber']?></p>
+                <p>Address: <?php echo $data['address']?></p>
             </div>
             <div class="footer-content">
                 <h3>Quick Links</h3>
@@ -39,5 +49,6 @@
         <div class="bottom-bar">
             <p>&copy; pre-school . All rights reserved</p>
         </div>
+    <?php } ?>
     </footer>
 
