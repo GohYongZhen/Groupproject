@@ -10,15 +10,22 @@ if(isset($_POST['submit'])){
     $age = $_POST["age"];
     $program = $_POST["program"];
     $message = $_POST["message"];
+    $child_birthday = $_POST["child_birthday"];
 
-    $query = "INSERT INTO enrollment (father_name, mother_name, parent_contact, parent_email, child_name, age, program, message) VALUES ('$father_name', '$mother_name', '$parent_contact', '$parent_email', '$child_name', '$age', '$program', '$message')";
+    $child_photo = $_FILES["child_photo"]['name'];
+
+
+    $query = "INSERT INTO enrollment (father_name, mother_name, parent_contact, 
+            parent_email, child_name, age, program, message, child_photo, child_birthday) 
+            VALUES ('$father_name', '$mother_name', '$parent_contact', 
+            '$parent_email', '$child_name', '$age', '$program', '$message', '$child_photo', '$child_birthday')";
 
     $result = mysqli_query($conn, $query);
-    
+
     if($result){
         echo "<script>alert('Enrollment Details sent successfully.');</script>";
         echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
-    } else {
+    }else{
         echo "<script>alert('Something went wrong. Please try again.');</script>";
     }
 }
@@ -48,7 +55,7 @@ if(isset($_POST['submit'])){
         
         
     <div class="fill">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <br>
             <h2>Start your Child’s Early Education</h2>
             <input type="text" class="box" id="fathername" name="father_name" placeholder="Father Name" required>
@@ -70,6 +77,9 @@ if(isset($_POST['submit'])){
             </select>
             <br>
             <br>
+            <input type="text" class="box2" id="child_birthday" name="child_birthday" placeholder="Child Birthday" onfocus="this.type='date'">
+            <br>
+            <br>
             <select class="box2" id="erollprogram" name="program"  required>
                 <option value="">Select a Program*</option>
                 <option value="PlayGroup-1.8 to 3 years">PlayGroup-1.8 to 3 years</option>
@@ -78,6 +88,9 @@ if(isset($_POST['submit'])){
                 <option value="Senior KG- 4.5 to 6 years">Senior KG- 4.5 to 6 years</option>
             </select>
             <br>
+            <p class = "photoname">Child Photo</p>
+            <input type="file" class="photoupload" name="child_photo" id="fileToUpload" accept=".jpg, .jpeg, .png">
+            <br>
             <br>
             <textarea class="box2" placeholder="Leave a message here" id="message" style="height: 100px" name="message" required></textarea>
             <br>
@@ -85,7 +98,7 @@ if(isset($_POST['submit'])){
             <button class="box2 button" type="submit" name="submit">Submit</button>
             <br>
             <br>
-            <img class ="pic" src="images/pic.jpg">
+            <!-- <img class ="pic" src="images/pic.jpg"> -->
     </form>
 </div>
 
