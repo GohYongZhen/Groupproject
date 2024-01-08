@@ -30,46 +30,52 @@ include("config.php");
         </div>
         
 
-
+        <form method="POST" action="career_action.php" enctype="multipart/form-data"  onsubmit="return validateForm()" id="myForm">
     <div class="center-form">
     <div class="form-container">
-      <form class="form-group">
-            <span class="custom-label">Name:</span>
-            <p></p>
-             <input type="text" name="name">
-    </form>
+      
+                    <tr>
+                        <span class="custom-label">Name:</span>
+                        <p></p>
+                        <input type="text" name="ja_name" id="ja_name">
+                        <p></p>
+    </tr>
 
         
 
-            <form  class="form-group" action="process.php" method="post"  onsubmit="return validateForm()">
+            <tr>
      
                 <span class="custom-label">Email:</span>
                 <p></p>
                 <input type="text" name="email" id="email">
                 <p></p>
-                <span class="custom-label">Contact:</span>
-                <p></p>
-             <input type="text" name="phone" id="phone">
+                <span class="custom-label">Contact:  </span> *PUT+6InfrontOfContact
+                
+                 <p></p>
+             <input type="text" name="contact" id="contact">
+             <p></p>
    
     
-            </form>
+    </tr>
       
 
-        <form class="form-group">
+        <tr>
                 <span class="custom-label">Age:</span>
                 <p></p>
-                <input type="text" name="Age" >
-    </form>
+                <input type="number" name="age" >
+                <p></p>
+    </tr>
 
-        <form class="form-group">
+        <tr>
                 <span class="custom-label">Birthday:</span>
                 <p></p>
-                <input type="date" name="date">
-    </form>
+                <input type="date" name="birthday">
+                <p></p>
+    </tr>
 
 
        
-            <form  class="form-group" action="process.php" method="post"  onsubmit="return validateForm()">
+    <tr>
                 <span class="custom-label">Status:</span>
                 <p></p>
                  <select name="status" id="status">
@@ -91,12 +97,12 @@ include("config.php");
                 </select>
                  <br>
   
-            </form>
+            </tr>
        
       
            
-                <form  class="form-group" action="process.php" method="post"  onsubmit="return validateForm()">
-     
+                <tr>
+                    <p></p>
                     <span class="custom-label">Nationalities:</span>
                     <p></p>
                         <select name="nationality" id="nationality">
@@ -164,49 +170,27 @@ include("config.php");
                     <p></p>
  
  
-                </form>
+                        </tr>
         
 
     
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Define the allowed file types
-    $allowedExts = array("pdf");
+ 
     
-    // Get the file extension
-    $temp = explode(".", $_FILES["file"]["name"]);
-    $extension = end($temp);
-    
-    // Check if the file type is allowed
-    if ((($_FILES["file"]["type"] == "application/pdf")
-        && ($_FILES["file"]["size"] < 2000000)  // You can set your preferred file size limit
-        && in_array($extension, $allowedExts))) {
-        
-        // If the file type is allowed, move the uploaded file to a specific directory
-        move_uploaded_file($_FILES["file"]["tmp_name"], "uploads/" . $_FILES["file"]["name"]);
-        
-        echo "File uploaded successfully.";
-    } else {
-        echo "Invalid file. Only PDF files are allowed.";
-    }
-}
-?> 
-    
-        <form  class="form-group" action="process.php" method="post" enctype="multipart/form-data">
+        <tr >
         <span class="custom-label">UploadYourResume</span>
             <p></p>
-            <input type="file" name="file" id="file">
+            <input type="file" name="file" id="file" required>
             <br>
             <p></p>
             <button type="submit" value="Submit" class="btn">Send </button>    
-         </form>
+                        </tr>
 
    
 
            
     </div>
                         </div>
-
+                        </div>
 
 <script>
     function validateForm() {
@@ -224,6 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             return false; // Prevent form submission
         }
 
+      
         return true; // Allow form submission if all validations pass
     }
 
