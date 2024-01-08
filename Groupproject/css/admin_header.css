@@ -1,3 +1,24 @@
+html{
+    height: 100%;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #e6ecf1;
+}
+
+.right_column{
+    width:80%;
+}
+
 /* header style */
 header{
     color: white;
@@ -6,7 +27,7 @@ header{
 
     display: flex;
     align-items: center;
-    padding: 25px;
+    padding: 15px;
 }
 
 .logo{
@@ -50,4 +71,46 @@ header{
 .admin_logout_button:hover {
     background-color: #0e7995;
     color: white;
+}
+
+#sideNav{
+    background-color: #0e7995;
+}
+
+.sidenav{
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    margin-top: 71px;
+}
+
+.sidenav a{
+    color: white;
+    padding:15px;
+    font-size: 20px;
+    text-decoration: none;  
+    transition: 0.5s;
+}
+
+.sidenav a:hover{
+    opacity: 100%;
+    background-color: rgb(38, 234, 234);
+}
+
+.closebutton{
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
 }
