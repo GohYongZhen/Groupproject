@@ -98,10 +98,10 @@ header {
 
   color:#ffffff;
   padding-top: 0%;
-  padding-right:60%;
+  padding-right:70%;
   padding-bottom: 5%;
-  padding-left: 10%;
-  width:10%;
+  padding-left: 15%;
+  width:100%;
   
 }
 
@@ -127,7 +127,7 @@ input[type="text"] {
         /* Styling Dropdown List */
         select {
             padding: 8px;
-            width: 50%;
+            width: 25%;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
