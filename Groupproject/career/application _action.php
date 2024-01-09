@@ -31,30 +31,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     $filetmp = $_FILES["file"];
 
-    //file of the image/photo file
+    //file of the file
     $uploadfileName = $filetmp["name"];
 
-    //Check if there is an image to be uploaded
-    //IF no image
+    //Check if there is an file to be uploaded
+    //IF no file
     if(isset($_FILES["file"]) && $_FILES["file"]["name"] == ""){
         $sql = " INSERT INTO application(ja_name,ja_email,ja_contact,ja_age,ja_birthday,ja_status,ja_nationality,ja_resume) VALUES ('". $ja_name ."','". $email ."','". $contact ."','". $age ."','". $birthday ."','". $status ."','". $nationality ."','". $uploadfileName ."')";
     
         $status = insertTo_DBTable($conn, $sql);
         if ($status) {
             echo "Apply successfully!<br>";
-            echo '<a href="career.php">Back</a>';
+            echo '<a href="application.php">Back</a>';
         } 
         else {
-            echo '<a href="career.php">Back</a>';
+            echo '<a href="application.php">Back</a>';
         }
     }
-        //IF there is image
+        //IF there is file
     else if (isset($_FILES["file"]) && $_FILES["file"]["error"] == UPLOAD_ERR_OK) {
         //Variable to determine for image upload is OK
         $uploadOk = 1;
         $filetmp = $_FILES["file"];
 
-        //file of the image/photo file
+        // file
         $uploadfileName = $filetmp["name"];
         $target_file = $target_dir .
         basename($_FILES["file"]["name"]);
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         //If uploadOk, then try add to database first 
-        //uploadOK=1 if there is image to be uploaded, filename not exists, file size is ok and format ok
+        //uploadOK=1 if there is file to be uploaded, filename not exists, file size is ok and format ok
         if($uploadOk){
             $sql = " INSERT INTO application(ja_name,ja_email,ja_contact,ja_age,ja_birthday,ja_status,ja_nationality,ja_resume) VALUES ('". $ja_name ."','". $email ."','". $contact ."','". $age ."','". $birthday ."','". $status ."','". $nationality ."','". $uploadfileName ."')";
     
@@ -83,10 +83,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     //Image file successfully uploaded
                     //Tell successfull record
                     echo "Apply successfully!<br>";
-                    echo '<a href="career.php">Back</a>';
+                    echo '<a href="application.php">Back</a>';
                 }
                 else{
-                    //There is an error while uploading image
+                    //There is an error while uploading file
                     echo "Sorry, there was an error uploading your file.<br>";
                     echo '<a href="javascript:history.back()">Back</a>';
                 }
@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 // If invalid, you can redirect back to the form with an error message
-if (!isValidEmail($email) || !isValidPhoneNumber($phone)) {
+if (!isValidEmail($email) || !isValidPhoneNumber($contact)) {
     header("Location: form.php?error=1");
     exit();
 }
@@ -115,10 +115,10 @@ function isValidEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
 }
 
-function isValidPhoneNumber($phone) {
+function isValidPhoneNumber($contact) {
     // Add your phone number validation logic if needed
     // Example: Use a regular expression
-    return preg_match('/^[0-9]{10}$/', $phone);
+    return preg_match('/^[0-9]{10}$/', $contact);
 }
 
 }
