@@ -17,7 +17,8 @@
                 <li><a href="teacher.php">Teacher</a></li>
                 <li><a href="classes.php">Classes</a></li>
                 <li><a href="facilities.php">Facilities</a></li>
-                <li><a href="admin.php">Admin</a></li>
+                <li><a href="admin_login.php">Admin</a></li>
+                <li><a href="application.php">Career</a></li>
             </ul>
         </nav>
         <a href="contact.php"><button class="contact-button">Contact</button></a>
