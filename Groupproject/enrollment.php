@@ -47,17 +47,17 @@ if(isset($_POST['submit'])){
 <body>
 <?php include('header.php');?>
 
-<div class="py-5 page-header">
-            <div class="py-5">
+<div class="page-header">
+            <div>
                 <h1>Child Enrollment</h1>
             </div>
         </div>
         
         
-    <div class="fill">
-        <form method="post" enctype="multipart/form-data">
-            <br>
-            <h2>Start your Child’s Early Education</h2>
+<div class="fill">
+  <div class="form-container">
+    <form method="post" enctype="multipart/form-data">
+           <h2>Start your Child’s Early Education</h2>
             <input type="text" class="box1" id="fathername" name="father_name" placeholder="Father Name" required>
             <input type="text" class="box1" id="mothername" name="mother_name" placeholder="Mother Name" required>
             <br>
@@ -86,18 +86,25 @@ if(isset($_POST['submit'])){
                 <option value="Senior KG- 4.5 to 6 years">Senior KG- 4.5 to 6 years</option>
             </select>
             <br>
-            <p class = "photoname">Child Photo</p>
-            <input type="file" class="photoupload" name="child_photo" id="fileToUpload" accept=".jpg, .jpeg, .png">
+      <div class="form-group">
+        <label for="child_photo" >Child Photo</label>
+        <input type="file" class="photoupload" name="child_photo" id="fileToUpload" accept=".jpg, .jpeg, .png">
+      </div>
+      <!-- More form inputs go here -->
+      <div class="message-leave">
+        <textarea class="box3" placeholder="Leave a message here" id="message" style="height: 100px" name="message" required></textarea>
+      </div>
+      <div>
+        <button class="boxbut button" type="submit" name="submit">Submit</button>
             <br>
+
             <br>
-            <textarea class="box3" placeholder="Leave a message here" id="message" style="height: 100px" name="message" required></textarea>
-            <br>
-            <br>
-            <button class="box3 button" type="submit" name="submit">Submit</button>
-            <br>
-            <br>
-            <img class ="photo" src="images/pic.jpg">
+      </div>
     </form>
+  </div>
+  <div class="photo-container">
+    <img class="photo" src="images/pic.jpg">
+  </div>
 </div>
 
 
