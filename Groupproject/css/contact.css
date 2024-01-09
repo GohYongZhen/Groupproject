@@ -145,6 +145,10 @@ section {
   padding: 0 20px;
 }
 
+.card-box {
+  border-radius: 50px;
+}
+
 .card {
   background: #2f3542;
   padding: 0 20px;
