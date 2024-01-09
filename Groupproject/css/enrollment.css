@@ -1,53 +1,63 @@
-.page-header { 
-    background-color:#e15232;
-    background-size: cover;
-    font-size: 30px;
-    text-align: center;
-    padding: 4rem;
-    height: 170px;
-    width: 1500px;
-    margin: 20px auto;
-  }
-  
-  .fill { 
-    background-color:#f5e6b1;
-    background-size: cover;
-    font-size: 30px;
-    text-align: center;
-    color: #000000;
-    width: 1500px;
-    margin: 20px auto;
-  }
-
-  h2 {color:#020c37}
-  
-  .box1{  position: relative;
-    width: 200px;
-    height: 50px;
-    right: 250px;}
-  
-  .box3{  position: relative;
-    width: 415px;
-    height: 50px;
-    right: 250px;}
-  
-  .button {background-color: #FE5D37;
-            color: #fff;}
-  
-.photo {position: absolute;
-      top: 681px;
-      right: 390px;
-      width: 30%;
-      height: auto;}
-
-.photoupload{
-  position: absolute;
-  top: 1030px;
-  right: 990px;
+.fill {
+  background-color: #f5e6b1;
+  font-size: 30px;
+  text-align: center;
+  color: #000000;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
-.photoname{
-  font-size: 20px;
-  position: absolute;
-  right: 1285px;
+.form-container {
+  width: 100%; /* Adjust the width as needed */
+}
+
+.form-group {
+  margin-bottom: 20px;
+  margin-left: 40px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.box1,
+.box3,
+.button,
+.photoupload {
+  width: 45%;
+  padding: 10px;
+}
+
+.box1 {
+  box-sizing: border-box;
+}
+
+.box3 {
+  height: 100px;
+  width: 380px;
+  resize: none;
+}
+
+.boxbut {
+  height: 50px;
+  resize: none;
+}
+
+.button {
+  background-color: #fe5d37;
+  color: #fff;
+}
+
+.photo-container {
+  padding: 20px;
+  display: flex;
+  width: 35%; /* Adjust the width as needed */
+  justify-items: center;
+  align-items: center;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
 }
