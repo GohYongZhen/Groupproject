@@ -10,7 +10,7 @@ include("../config.php");
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pre-School enrollment system | Admin</title>
-    <link rel="stylesheet" href="../css/teacher.css">
+    <link rel="stylesheet" href="../css/teacher_admin.css">
     <link rel="stylesheet" href="../css/admin_header.css">
 </head>
 <body onload="makeTableScroll()">
@@ -47,7 +47,7 @@ include("../config.php");
                             echo'<tr>
                             <td>
                                 <div class="teacher_pic_div"">
-                                    <img src="'.$row["tc_pic"].'">
+                                    <img src="img/'. $row["tc_pic"].'" alt="Teacher Image">
                                     <label for="tc_name">'.$row["tc_name"]. '</label>
                                 </div>
                             </td>

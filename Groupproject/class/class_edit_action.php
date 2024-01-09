@@ -2,16 +2,16 @@
 session_start();
 include('../config.php');
 
-
 //variables
 $id="";
-$tc_name="";
-$tc_email="";
-$tc_desc = "";
-$tc_pic = "";
+$cl_name="";
+$teacher_id=0;
+$cl_agegroup = "";
+$cl_time = "";
+$cl_photo = "";
 
 //for upload
-$target_dir = "";
+$target_dir = "img/";
 $target_file = "";
 $uploadOk = 0;
 $imageFileType = "";
@@ -19,11 +19,12 @@ $uploadfileName = "";
 
 //this block is called when button Submit is clicked 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-    //values for add or edit 
-    $id=$_POST["teacher_id"];
-    $tc_name = $_POST["tc_name"];
-    $tc_email = $_POST["tc_email"];
-    $tc_desc = trim($_POST["tc_desc"]);
+    //values for add or edit
+    $id = $_POST["class_id"];
+    $cl_name = $_POST["cl_name"];
+    $teacher_id = $_POST["teacher_id"];
+    $cl_agegroup = $_POST["cl_agegroup"];
+    $cl_time = $_POST["cl_time"];
 
     $filetmp = $_FILES["img_file"]; 
     //file of the image/photo file 
@@ -31,20 +32,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Check if there is an image to be uploaded 
     //IF no image 
     if(isset($_FILES["img_file"]) && $_FILES["img_file"]["name"] == ""){ 
-        $sql = "UPDATE teacher SET 
-            tc_name= '$tc_name', 
-            tc_desc = '$tc_desc', 
-            tc_email = '$tc_email' 
-            WHERE teacher_id = ". $id; 
+        $sql = "UPDATE class SET 
+            cl_name= '$cl_name', 
+            teacher_id = '$teacher_id', 
+            cl_agegroup = '$cl_agegroup',
+            cl_time = '$cl_time'
+            WHERE class_id = ". $id; 
             
             $status = update_DBTable($conn, $sql); 
         
         if ($status) { 
             echo "Form data updated successfully!<br>"; 
-            echo '<a href="teacher.php">Back</a>'; 
+            echo '<a href="class.php">Back</a>'; 
         } 
         else { 
-            echo '<a href="teacher.php">Back</a>'; 
+            echo '<a href="class.php">Back</a>'; 
         } 
     } 
     //IF there is image 
@@ -68,8 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $uploadOk = 0; 
         } 
         // Allow only these file formats 
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) { 
-            echo "ERROR: Sorry, only JPG, JPEG, PNG & GIF files are allowed.<br>"; 
+        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") { 
+            echo "ERROR: Sorry, only JPG, JPEG, PNG files are allowed.<br>"; 
             $uploadOk = 0; 
         } 
         //If uploadOk, then try add to database first 
@@ -77,14 +79,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if($uploadOk){ 
             
 
-            $sql =  "DELETE FROM teacher WHERE teacher_id=" . $id . ";";
+            $sql =  "DELETE FROM class WHERE class_id=" . $id . ";";
 
             // Get the image filename from the database
-            $selectQuery = "SELECT tc_pic FROM teacher WHERE teacher_id = " . $id;
+            $selectQuery = "SELECT cl_photo FROM class WHERE class_id = " . $id;
             $result = mysqli_query($conn, $selectQuery);
             if ($result) {
                 $row = mysqli_fetch_assoc($result);
-                $img_path = $row['tc_pic'];
+                $img_path = "img/".$row['cl_photo'];
 
                 // Delete the file from the uploads folder
                 $delete_file_path = $img_path;
@@ -101,12 +103,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
 
-            $sql = "UPDATE teacher SET 
-            tc_name= '$tc_name', 
-            tc_desc = '$tc_desc', 
-            tc_email = '$tc_email',
-            tc_pic = '$target_file' 
-            WHERE teacher_id = ". $id; 
+            $sql = "UPDATE class SET 
+            cl_name= '$cl_name', 
+            teacher_id = '$teacher_id', 
+            cl_agegroup = '$cl_agegroup',
+            cl_time = '$cl_time',
+            cl_photo = '$uploadfileName'
+            WHERE class_id = ". $id; 
             $status = update_DBTable($conn, $sql); 
 
             $status = update_DBTable($conn, $sql); if ($status) { 
@@ -114,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     //Image file successfully uploaded 
                     //Tell successfull record 
                     echo "Form data updated successfully!<br>"; 
-                    echo '<a href="teacher.php">Back</a>'; 
+                    echo '<a href="class.php">Back</a>'; 
                 } 
                 else { //There is an error while uploading image
                     echo "Sorry, there was an error uploading your file.<br>"; 

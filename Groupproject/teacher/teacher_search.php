@@ -10,7 +10,7 @@ include("../config.php");
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pre-School enrollment system | teacher</title>
-    <link rel="stylesheet" href="../css/teacher.css">
+    <link rel="stylesheet" href="../css/teacher_admin.css">
     <link rel="stylesheet" href="../css/admin_header.css">
 </head>
   <body onload="makeTableScroll();">

@@ -3,13 +3,14 @@ session_start();
 include('../config.php');
 
 //variables
-$tc_name="";
-$tc_email="";
-$tc_desc = "";
-$tc_pic = "";
+$cl_name="";
+$teacher_id=0;
+$cl_agegroup = "";
+$cl_time = "";
+$cl_photo = "";
 
 //for upload
-$target_dir = "";
+$target_dir = "img/";
 $target_file = "";
 $uploadOk = 0;
 $imageFileType = "";
@@ -18,9 +19,10 @@ $uploadfileName = "";
 //this block is called when button Submit is clicked
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //values for add or edit
-    $tc_name = $_POST["tc_name"];
-    $tc_email = $_POST["tc_email"];
-    $tc_desc = trim($_POST["tc_desc"]);
+    $cl_name = $_POST["cl_name"];
+    $teacher_id = $_POST["teacher_id"];
+    $cl_agegroup = $_POST["cl_agegroup"];
+    $cl_time = $_POST["cl_time"];
     
     $filetmp = $_FILES["img_file"];
     //file of the image/photo file
@@ -53,8 +55,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          //If uploadOk, then try add to database first 
          //uploadOK=1 if there is image to be uploaded, filename not exists, file size is ok and format ok
          if($uploadOk){
-             $sql = "INSERT INTO teacher (tc_name, tc_desc, tc_email, tc_pic)
-                 VALUES ('".$tc_name."','".$tc_desc."','".$tc_email."','". $target_file."')";
+            $sql =  "DELETE FROM teacher WHERE teacher_id=" . $id . ";";
+
+            // Get the image filename from the database
+            $selectQuery = "SELECT tc_pic FROM teacher WHERE teacher_id = " . $id;
+            $result = mysqli_query($conn, $selectQuery);
+            if ($result) {
+                $row = mysqli_fetch_assoc($result);
+                $img_path = $row['tc_pic'];
+
+                // Delete the file from the uploads folder
+                $delete_file_path = $img_path;
+
+                if (!empty($img_path) && file_exists($delete_file_path)) {
+                    if (unlink($delete_file_path)) {
+                        echo "Image deleted successfully<br>";
+                    } else {
+                        echo "Error deleting image file<br>";
+                    }
+                } else {
+                    echo "Image file not found or no image associated with the record<br>";
+                }
+            }
+
+             $sql = "INSERT INTO class (teacher_id, cl_name, cl_agegroup, cl_time, cl_photo)
+                 VALUES (".$teacher_id.",'".$cl_name."','".$cl_agegroup."','".$cl_time."','". $uploadfileName."')";
              
              $status = insertTo_DBTable($conn, $sql);
              if ($status) {
@@ -62,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                      //Image file successfully uploaded
                      //Tell successfull record
                      echo "Form data saved successfully!<br>";
-                     echo '<a href="teacher.php">Back</a>';
+                     echo '<a href="class.php">Back</a>';
                  }
                  else{
                      //There is an error while uploading image

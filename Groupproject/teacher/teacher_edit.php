@@ -10,7 +10,7 @@ include("../config.php");
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pre-School enrollment system | teacher</title>
-    <link rel="stylesheet" href="../css/teacher.css">
+    <link rel="stylesheet" href="../css/teacher_admin.css">
     <link rel="stylesheet" href="../css/admin_header.css">
 </head>
 <body>
@@ -40,7 +40,7 @@ include("../config.php");
     <div class="teacher_add_div">
         <h1>Edit teacher</h1>
 
-        <form action="teacher_edit_action.php" method="post"  enctype="multipart/form-data">
+        <form action="class_edit_action.php" method="post"  enctype="multipart/form-data">
             <!--id--> 
             <input type="text" id="teacher_id" name="teacher_id" value="<?=$_GET['id']?>" hidden> 
             
@@ -57,7 +57,7 @@ include("../config.php");
 
             <label for="tc_pic">Potrait</label>
             <div class="upload_pic_div">    
-                <input type="file" id="img_file" name="img_file"  accept=".jpg, .jpeg, .png"     onchange="previewImage()">
+                <input type="file" id="img_file" name="img_file"  accept=".jpg, .jpeg, .png" onchange="previewImage()">
                 <img src="<?php echo $tc_pic ?>" id="img_preview" alt="Image Preview" >
             </div>
 
