@@ -1,0 +1,348 @@
+.container{
+    width:70%;
+    margin-left: 22.5%;
+    margin-right: 7.5%;
+    padding-top: 30px;
+}
+
+
+.container h1{
+    width: 98%;
+    height: 100%;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.scrolling_table{
+    overflow-y: auto;
+    border: solid 2px #555;
+}
+
+.class_table{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    
+    font-size: 15px;
+    border: solid 2px #555;
+
+}
+
+.class_table th, td{
+    padding: 10px 20px;
+
+    border: solid 2px #555;
+    color:black;
+    background-color: #fff9fe;
+}
+
+.class_table th{
+    background-color: #84c3c9;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.class_table td{
+    border: solid 1px #d9d4da;
+}
+
+.class_table img{
+    width: 100%;
+    height: 100%;
+
+    margin: 10px 0px;
+    box-shadow: -1px 3px #698ca1;
+}
+
+/* Information DIV */
+
+.information_div{
+    display: flex;
+    flex-direction: column;
+}
+
+.info_row{
+    width: 100%;
+    display: flex;
+}
+
+.info_row label{
+    width: 100%;
+    padding:10px;
+    border-bottom: solid 1px #d9d4da;
+    border-top: solid 1px #d9d4da;
+}
+
+.button_row{
+    width: 100%;
+    text-align: center;
+}
+
+.add_button{
+    padding: 3px 30px;
+    text-align: center;
+    background-color: #35a2a9;
+    border: none;
+    border-radius: 50px;
+
+    font-size: 15px;
+    color: #fefefe;
+}
+
+.add_button:hover{
+    transition:all  0.2s ease 0s;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.search{
+    display: flex;
+    justify-content: space-between;
+}
+
+.search form{
+    margin: 5px 0px;
+    text-align:right; 
+}
+
+.search input[type="text"]{
+    border: solid 1px #555;
+    border-radius: 3px;
+}
+
+.search input[type="submit"]{
+    padding: 3px 10px;
+    text-align: center;
+    background-color: #35a2a9;
+    border: none;
+    border-radius: 50px;
+
+    font-size: 15px;
+    color: #fefefe;
+}
+
+.search input[type="submit"]:hover{
+    transition:all  0.2s ease 0s;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+
+
+.class_button_action a{
+    padding: 3px 20px;
+    text-align: center;
+    background-color: #35a2a9;
+    border: none;
+    border-radius: 50px;
+
+    font-size: 15px;
+    color: #fefefe;
+    text-decoration: none;
+}
+
+.class_button_action button:hover{
+    transition:all  0.2s ease 0s;
+    cursor: pointer;
+    
+    background-color: #35a2a9;
+    opacity: 1.0;
+}
+
+/*class add css*/
+
+.class_add_div{
+    height: 75%;
+    margin:25px;
+    margin-left: 25%;
+    margin-right: 10%;
+    padding:15px;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    background-color: #fefefe;
+}
+
+.class_add_div h1{
+    width: 60%;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.class_add_div form{
+    margin:0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20%;
+    height: 100%;
+
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    border: solid 1px #ccc;
+
+    font-size: 15px;
+}
+
+.input_row{
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input_row label, input, select{
+    margin-right: 10px;
+}
+
+.class_add_div input, select{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.class_add_div label{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.class_add_div textarea{
+    padding: 5px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.class_add_div input[type="file"]{
+    margin-right: 0px;
+    
+}
+
+.class_add_div input[type="file"]::file-selector-button{
+    padding: 5px 15px;
+    margin-right: 20px;
+    background-color: #35a2a9;
+    border: none;
+    border-radius: 10px;
+
+    font-size: 15px;
+    color: #fefefe;
+}
+
+.upload_pic_div{
+    display: flex;
+    align-items: center;
+    border: solid 1px #ccc;
+    margin-bottom: 10px;
+}
+
+.upload_pic_div label{
+    width: 30%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.upload_pic_div input{
+    margin-bottom: 0;
+    padding: 10px 20px;
+}
+
+.upload_pic_div img{
+    width: 20%;
+}
+
+.class_button{
+    width: 30%;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.class_button button{
+    padding: 3px 30px;
+    text-align: center;
+    background-color: #35a2a9;
+    border: none;
+    border-radius: 50px;
+
+    font-size: 15px;
+    color: #fefefe;
+}
+
+.class_button button:hover{
+    transition:all  0.2s ease 0s;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.class_add_button{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.class_add_button input[type="submit"], input[type="reset"]{
+    text-align: center;
+    margin: 0px 20px;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.class_add_div input[type="submit"], input[type="reset"]{
+    margin-right: 0;
+    padding: 5px 20px;
+    align-items: center;
+    text-align: center;
+    background-color: #35a2a9;
+    border: none;
+    border-radius: 50px;
+
+    font-size: 15px;
+    color: #fefefe;
+}
+
+.class_add_div input[type="submit"]:hover, input[type="reset"]:hover, input[type="file"]::file-selector-button:hover{
+    transition:all  0.2s ease 0s;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.class_add_div button{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 20px;
+    text-align: center;
+    background-color: #fefefe;
+    border: solid 1px #35a2a9;
+    border-radius: 50px;
+
+    font-size: 15px;
+    color: #35a2a9;
+}
+
+.class_add_div button:hover{
+    transition:all  0.2s ease 0s;
+    cursor: pointer;
+    background-color: #35a2a9;
+    color: #fefefe;
+    border: none;
+    opacity: 0.5;
+}
