@@ -1,9 +1,14 @@
 <!--header-->
 <?php
+if (!isset($_SESSION['UID'])) {
+  header("Location: ../index.php");
+  exit(); // Make sure to include an exit() after redirection
+}
 echo'
     <header>
       <a class="dashboard" href="../admin/admin_dashboard.php"><img class="logo" src="../images/logo_white.png" alt="logo"></a>
-      <a href="admin_logout.php"><button class="admin_logout_button">Logout</button></a>
+      <a href="../admin/changePw.php"><button class="admin_logout_button">Change password</button></a>
+      <a href="../admin_logout.php"><button class="admin_logout_button">Logout</button></a>
     </header>
 
     <div id="sideNav" class="sidenav">
@@ -12,7 +17,7 @@ echo'
       <a href="application.php">Application</a>
       <a href="../message/message.php">Messages</a>
       <a href="../teacher/teacher.php">Teacher</a>
-      <a href="#">Class</a>
+      <a href="../adminClass/admin_class.php">Class</a>
       <a href="#">Facilities</a>
       <a href="#">Edit Pages</a>
     </div>
