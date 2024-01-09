@@ -1,5 +1,4 @@
 <?php
-session_start();
 //database connection
 include("config.php");
 ?>
