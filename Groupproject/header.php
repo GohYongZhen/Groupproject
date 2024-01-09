@@ -9,13 +9,15 @@
 </head>
 <body>
     <header>
-        <img class="logo" src="images/logo.svg" alt="logo">
+        <img class="logo" src="images/logo_black.png" alt="logo">
         <nav>
             <ul class="nav_links nav_bars">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="aboutus.php">About Us</a></li>
-                <li><a href="#">Classes</a></li>
-                <li><a href="#">Admin</a></li>
+                <li><a href="teacher.php">Teacher</a></li>
+                <li><a href="class.php">Classes</a></li>
+                <li><a href="facilities.php">Facilities</a></li>
+                <li><a href="admin.php">Admin</a></li>
             </ul>
         </nav>
         <a href="contact.php"><button class="contact-button">Contact</button></a>
