@@ -41,7 +41,7 @@ include('config.php');
           <h2><?php echo $row['cl_name']?></h2> 
           <h3 class="img1">Teacher: <?php echo $row['tc_name']?></h3>
           <div class="img1">
-            <img src="images/<?php echo $row['cl_photo']?>" alt="Real Image" class="realimg" />
+            <img src="teacher/<?php echo $row['cl_photo']?>" alt="Real Image" class="realimg" />
 			<table class="table" ; width="70%">
 				<tr class="c_up">
 					<th width="50%">Age Range</th>
