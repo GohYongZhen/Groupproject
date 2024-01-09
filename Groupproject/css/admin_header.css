@@ -21,6 +21,7 @@ body {
 
 /* header style */
 header{
+    height: 10%;
     color: white;
 
     background-color: #033f63;
@@ -33,6 +34,8 @@ header{
 .logo{
     cursor: pointer;
     margin-right: 20px;
+    width: 161px;
+    height: 50px;
 }
 
 .dashboard{
@@ -46,8 +49,7 @@ header{
 }
 
 .dashboard:hover{
-    opacity: 0.5;
-    text-shadow: 2px 2px black;
+    opacity: 0.8;
 }
 
 .admin_logout_button{
@@ -83,14 +85,9 @@ header{
     position: fixed;
     display: flex;
     flex-direction: column;
-    z-index: 1;
-    top: 0;
-    left: 0;
     background-color: #111;
-    overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    margin-top: 71px;
 }
 
 .sidenav a{

@@ -1,0 +1,174 @@
+.container{
+    width:70%;
+    margin-left: 22.5%;
+    margin-right: 7.5%;
+    padding-top: 30px;
+}
+
+
+.container h1{
+    width: 98%;
+    height: 100%;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.scrolling_table{
+    overflow-y: auto;
+    border: solid 2px #555;
+}
+
+.message_table{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    
+    font-size: 15px;
+    border: solid 2px #555;
+
+}
+
+.message_row:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.message_table th, td{
+    padding: 5px 5px;
+
+    border: solid 2px #555;
+    color:black;
+    background-color: #fefefe;
+}
+
+.message_table th{
+    background-color: #84c3c9;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.message_table td{
+    text-align: center; 
+    border: solid 1px #555;
+}
+
+.search{
+    display: flex;
+    justify-content: space-between;
+}
+
+.search form{
+    margin: 5px 0px;
+    text-align:right; 
+}
+
+.search input[type="text"]{
+    border: solid 1px #555;
+    border-radius: 3px;
+}
+
+.search input[type="submit"]{
+    padding: 3px 10px;
+    text-align: center;
+    background-color: #35a2a9;
+    border: none;
+    border-radius: 50px;
+
+    font-size: 15px;
+    color: #fefefe;
+}
+
+.search input[type="submit"]:hover{
+    transition:all  0.2s ease 0s;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.container p{
+    font-size: 15px;
+    margin: 0px;
+
+}
+
+.message_container{ 
+    width: 95%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding:20px;
+    overflow-y: auto;
+
+    background-color: #fefefe;
+    box-shadow: 0px 3px lightblue;
+}
+
+.message_container p{
+    font-size: 18px;
+}
+
+.message_button{
+    width: 30%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.message_button button{
+    padding: 3px 30px;
+    text-align: center;
+    background-color: #35a2a9;
+    border: none;
+    border-radius: 50px;
+
+    font-size: 15px;
+    color: #fefefe;
+}
+
+.message_button button:hover{
+    transition:all  0.2s ease 0s;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.message_button_action a{
+    padding: 3px 30px;
+    text-align: center;
+    background-color: #35a2a9;
+    border: none;
+    border-radius: 50px;
+
+    font-size: 15px;
+    text-decoration: none;
+    color: #fefefe;
+}
+
+.message_button_action button:hover{
+    transition:all  0.2s ease 0s;
+    cursor: pointer;
+    
+    background-color: #35a2a9;
+    opacity: 1.0;
+}
+
+.row{
+    display: inline-block;
+}
+
+.message_table{
+    width: 100%;
+    background-color: black;
+}
+
+.button_row{
+    width: 100%;
+    text-align: center;
+}
