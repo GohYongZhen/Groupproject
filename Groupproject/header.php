@@ -15,7 +15,7 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="aboutus.php">About Us</a></li>
                 <li><a href="teacher.php">Teacher</a></li>
-                <li><a href="class.php">Classes</a></li>
+                <li><a href="classes.php">Classes</a></li>
                 <li><a href="facilities.php">Facilities</a></li>
                 <li><a href="admin.php">Admin</a></li>
             </ul>
