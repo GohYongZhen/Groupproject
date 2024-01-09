@@ -28,11 +28,12 @@ include("config.php");
             <div class="footer-content">
                 <h3>Quick Links</h3>
                 <ul class="list">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Classes</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Admin</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="aboutus.php">About Us</a></li>
+                    <li><a href="classes.php">Classes</a></li>
+                    <li><a href="teacher.php">Teacher</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="admin.php">Admin</a></li>
                 </ul>
             </div>
             <div class="footer-content">
