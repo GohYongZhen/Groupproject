@@ -1,0 +1,253 @@
+html{
+    height: 100%;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #e6ecf1;
+}
+
+.right_column{
+    width:80%;
+}
+.content{
+   margin-left: 15%;
+}
+h2{
+    margin-left: 15%;
+}
+/* header style */
+header{
+    color: white;
+
+    background-color: #033f63;
+
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.logo{
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.dashboard{
+    height: 100%;
+    margin-right: auto;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+
+    transition: all 0.1s ease 0s;
+}
+
+.dashboard:hover{
+    opacity: 0.5;
+    text-shadow: 2px 2px black;
+}
+
+.admin_logout_button{
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 9px 25px;
+    justify-content: flex-end;
+
+    background-color: #fbf1e8;
+    
+    font-weight: 500;
+    font-size: 20px;
+    
+    border: none;
+    border-radius: 50px;
+
+    cursor: pointer;
+    transition: all 0.1s ease 0s;
+}
+
+.admin_logout_button:hover {
+    background-color: #0e7995;
+    color: white;
+}
+
+#sideNav{
+    background-color: #0e7995;
+    
+}
+
+.sidenav{
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    margin-top: 208px;
+}
+
+.sidenav a{
+    color: white;
+    padding:15px;
+    font-size: 20px;
+    text-decoration: none;  
+    transition: 0.5s;
+}
+
+.sidenav a:hover{
+    opacity: 100%;
+    background-color: rgb(38, 234, 234);
+}
+
+.closebutton{
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+  .button {
+    font-size: 18px;
+    color: #fff;
+    width: 100%;
+    background-color: rgba(0, 136, 169, 0.8);
+    font-weight: 600;
+    transition: 0.3s ease;
+    padding: 14px 15px;
+    border: 1px solid #ffc127;
+  }
+
+  #projectable {
+	border-collapse: collapse;
+	width: 70%;
+	padding-left: 30px;
+}
+#projectable td, #projectable th {
+	border: 1px solid #616161;
+	padding: 8px;
+}
+#projectable tr:nth-child(even){background-color: #ddd;}
+#projectable tr:hover {background-color: #C8B4BA;}
+#projectable th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: #0e7995;
+	color: black;
+}
+#projectable td {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align:center;
+	color: black;
+}
+
+   
+.form-container {
+
+    color:#000000;
+    padding-top: 0%;
+    padding-right:70%;
+    padding-bottom: 5%;
+    padding-left: 15%;
+    width:100%;
+    font-size:large;
+    
+  }
+  
+  input[type="text"] {
+    width: 200px; /* Adjust the size as needed */
+    padding: 8px; /* Optional: Add padding for better aesthetics */
+  }
+          /* Styling Date Input */
+          input[type="date"] {
+              padding: 8px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+          }
+  
+          input[type="number"] {
+           
+            width: 80px;
+            height: 30px;
+  
+            
+        }
+  
+          /* Styling Dropdown List */
+          select {
+              padding: 8px;
+              width: 25%;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+          }
+  
+          /* Styling Choose File Input */
+          input[type="file"] {
+              padding: 8px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+          }
+  
+          .custom-label {
+            color: rgb(255, 255, 255);           /* Text color: black */
+            background-color: #0e7995; /* Background color: sky blue */
+            padding: 5px 50px;       /* Optional: Adjust padding for spacing */
+            border-radius: 5px;      /* Optional: Add rounded corners */
+            position: center;
+          }
+          
+          .form-group {
+            
+            margin-top: 0px;
+            font-size: 30px;
+            margin-bottom: 50px; /* Adjust the value to increase or decrease space */
+          }    
+    
+
+        
+    
+        .teacher_pic_div{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .teacher_pic_div label{
+            font-size: 20px;
+            padding: 5px 30px;
+        
+            align-items: center;
+            text-align: center;
+            background-color: #fefefe;
+            border: solid 2px #0e7995;
+            border-radius: 50px;
+            color: #0e7995;
+        }
+        
+        .teacher_table img{
+            width: 30%;
+            height: 30%;
+        
+            margin: 10px 0px;
+            box-shadow: -1px 3px #698ca1;
+        }
+    
