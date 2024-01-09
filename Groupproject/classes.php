@@ -19,11 +19,9 @@ include('config.php');
 <body>
 <?php include('header.php');?>
 
-<div class="py-5 page-header">
-            <div class="py-5">
-                <h1>Classes</h1>
-            </div>
-        </div>
+<div class="page-header">
+<h1>Classes</h1>
+ </div>
 
  <?php
         $sql = "SELECT class.*, teacher.*
