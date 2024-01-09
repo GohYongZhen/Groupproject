@@ -34,7 +34,7 @@ if (mysqli_num_rows($result) == 1) {
         $_SESSION["UID"] = $row["userID"];
         $_SESSION["userName"] = $row["admin_username"];
         $_SESSION['loggedin_time'] = time();
-        header("location:enrollment.php");
+        header("location:admin_dashboard.php");
     } else {
         // If the password is incorrect, call the JavaScript function to show an alert
         echo '<script>showAlert("Username or password is incorrect.");</script>';
