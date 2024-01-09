@@ -8,7 +8,7 @@ echo'
     <header>
       <a class="dashboard" href="../admin/admin_dashboard.php"><img class="logo" src="../images/logo_white.png" alt="logo"></a>
       <a href="../admin/changePw.php"><button class="admin_logout_button">Change password</button></a>
-      <a href="../admin_logout.php"><button class="admin_logout_button">Logout</button></a>
+      <a href="../admin/admin_logout.php"><button class="admin_logout_button">Logout</button></a>
     </header>
 
     <div id="sideNav" class="sidenav">
