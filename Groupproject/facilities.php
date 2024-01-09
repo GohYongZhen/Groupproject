@@ -39,11 +39,8 @@ include("config.php");
             <p class="right"><?php echo $row['faci_desc']?></p>
           </div>
         </div>
-        
-
-       
-
-    
+        <!-- for changing to second show in photo in right -->
+        <!-- and checking for the databse still have info or not-->
         <?php $row = mysqli_fetch_assoc($result);
         if($row){
             
