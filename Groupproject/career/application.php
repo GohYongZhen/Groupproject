@@ -9,7 +9,7 @@ include("config.php");
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pre-School enrollment system | Home page</title>
+    <title>JOB APPLICATION</title>
     <link rel="stylesheet"  href="css/careerstyle.css">
 
     <script>
@@ -29,9 +29,9 @@ include("config.php");
             
             </div>
         
-
-    <div form style="padding:0 10px;" method="POST" action="career_action.php" enctype="multipart/form-data"  onsubmit="return validateForm()" id="myForm">
-      
+        <div>
+    <form style="padding:0 10px;" method="POST" action="application_action.php" enctype="multipart/form-data"  onsubmit="return validateForm()" id="myForm">
+       
              <div class="form-container">
       
                     <tr>
@@ -180,16 +180,17 @@ include("config.php");
                             <input type="file" name="file" id="file" required>
                             <br>
                             <p></p>
-                            <button type="submit" value="Submit" class="btn">Send </button>    
+                            <button type="submit" value="Submit" class="btn">Send </button>     
                         </tr>
 
-   
+                                </form>
 
            
                  </div>
          </div>
+                                </dvi>
     
-                                </div>
+                               
                         
 
 <script>
@@ -202,7 +203,7 @@ include("config.php");
         }
 
         // Similar validation for phone number
-        var phoneInput = document.getElementById('phone').value;
+        var phoneInput = document.getElementById('contact').value;
         if (!isValidPhoneNumber(phoneInput)) {
             showPopup('Invalid Phone Number Format');
             return false; // Prevent form submission
@@ -218,10 +219,10 @@ include("config.php");
         return emailRegex.test(email);
     }
 
-    function isValidPhoneNumber(phone) {
+    function isValidPhoneNumber(contact) {
         // Use a regular expression for phone number validation
         var phoneRegex = /^\+60\d{9,10}$/;
-        return phoneRegex.test(phone);
+        return phoneRegex.test(contact);
     }
 </script>
 
