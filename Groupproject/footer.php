@@ -33,6 +33,7 @@ include("config.php");
                     <li><a href="classes.php">Classes</a></li>
                     <li><a href="teacher.php">Teacher</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="application.php">Career</a></li>
                     <li><a href="admin.php">Admin</a></li>
                 </ul>
             </div>

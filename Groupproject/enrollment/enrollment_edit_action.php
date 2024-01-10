@@ -1,5 +1,5 @@
 </br><?php
-include('config.php');
+include("../config.php");
 $id="";
 $father_name="";
 $mother_name="";
@@ -13,7 +13,7 @@ $child_birthday="";
 
 
 // for upload
-$target_dir = "uploads/"; 
+$target_dir = "../enrol_pic/"; 
 $target_file = ""; 
 $uploadOk = 0; 
 $fileType = ""; 
@@ -38,8 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     $uploadfileName = $filetmp["name"];
-
-    echo $id;
     
    
     // Check if there is an fileto be uploaded
@@ -59,8 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     child_birthday = '$child_birthday'
    
     WHERE enrol_id = $id";
-     
-     echo $sql;
 
 	$status = update_DBTable($conn, $sql); 
 
@@ -80,8 +76,7 @@ if ($status) {
 	
 	//file of the image/photo file 
 		$uploadfileName = $filetmp["name"]; 
-		$target_file = $target_dir . 
-	basename($_FILES["file"]["name"]); 
+		$target_file = $target_dir . basename($_FILES["file"]["name"]); 
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 		
 		
@@ -97,18 +92,40 @@ if ($_FILES["file"]["size"] > 2000000) { echo "ERROR: Sorry, your file is too la
 } 
 
 // Allow only these file formats 
-if($imageFileType != "pdf"  ) {
-	echo "ERROR: Sorry, only PDF files are allowed.<br>";
-	$uploadOk = 0;
-	} 
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+    echo "ERROR: Sorry, only JPG, JPEG, PNG files are allowed.<br>";
+    $uploadOk = 0;
+}
 	
 	
 //If uploadOk, then try add to database first 
 //uploadOK=1 if there is image to be uploaded, filename not exists, file size is ok and format ok 
 	if($uploadOk){ 
        
+    $selectQuery = "SELECT child_photo FROM enrollment WHERE enrol_id = " . $id;
+    $result = mysqli_query($conn, $selectQuery);
     
-        $sql = "UPDATE enrollment SET
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $file = $row['child_photo'];
+
+        // Delete the file from the uploads folder
+         $delete_file_path = '../enrol_pic/' . $file; 
+        if (!empty($file) && file_exists($delete_file_path)) {
+            if (unlink($delete_file_path)) {
+                echo "Image deleted successfully<br>";
+            } else {
+                echo "Error deleting image file<br>";
+            }
+        } else {
+            echo "Image file not found or no image associated with the record<br>";
+        }
+    }
+
+    $filename = uniqid() . '_' . basename($_FILES["file"]["name"]);
+    $target_file = $target_dir . $filename;
+
+    $sql = "UPDATE enrollment SET
     father_name = '$father_name',
     mother_name = '$mother_name',
     parent_contact = '$parent_contact',
@@ -118,11 +135,8 @@ if($imageFileType != "pdf"  ) {
     program = '$program',
     message = '$message',
     child_birthday = '$child_birthday',
-    child_photo = '$uploadfileName'
-    WHERE enrol_id = $id";
-
-     
-    echo $sql;
+    child_photo = '$filename'
+    WHERE enrol_id = ". $id;
     
 		$status = update_DBTable($conn, $sql); 
 		
@@ -140,8 +154,7 @@ if($imageFileType != "pdf"  ) {
 			
 		//There is an error while uploading image
 		echo "Sorry, there was an error uploading your file.<br>"; 
-		echo '<a 
-		href="javascript:history.back()">Back</a>'; 
+		echo '<a href="javascript:history.back()">Back</a>'; 
 		} 
 		} 
 		else { 
@@ -152,32 +165,10 @@ if($imageFileType != "pdf"  ) {
 		echo '<a href="javascript:history.back()">Back</a>'; 
 		}
 	 
-
-
-$target_file = realpath($target_dir) . '/' . basename($_FILES["file"]["name"]);
-
-if (file_exists($target_file) && is_writable($target_file)) {
-    // Proceed with update or delete operations
-} else {
-    echo "Error: File not found or insufficient permissions.";
+    }
 }
 
-// Delete the old image file
-if (file_exists($old_file_path)) {
-    unlink($old_file_path);
-}
 
-if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-    // Image file successfully uploaded
-    echo "Form data updated successfully!<br>";
-    echo '<a href="application_list.php">Back</a>';
-} else {
-    // There is an error while uploading image
-    echo "Sorry, there was an error uploading your file.<br>";
-    echo '<a href="javascript:history.back()">Back</a>';
-}
-}
-}
 
 
 //close db connection 

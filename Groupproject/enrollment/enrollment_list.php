@@ -1,7 +1,7 @@
 <?php
 session_start();
 //database connection
-include("config.php");
+include("../config.php");
 ?>
 
 
@@ -12,12 +12,13 @@ include("config.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Enrollment List</title>
-    <link rel="stylesheet" href="css/application_admin_header.css">
+    <link rel="stylesheet" href="../css/application_admin_header.css">
+	<link rel="stylesheet" href="../css/admin_header.css">
 
 </head>
-<body>
+<body onload="makeTableScroll()">
    
-<?php include('admin_header.php');?>
+<?php include('../admin_header.php');?>
     <h2>LIST OF STUDENT ENROLLMENT</h2> 
       
         
@@ -26,6 +27,7 @@ include("config.php");
 			<div style="text-align: right; padding:10px;">
 				
 			</div>
+			<div class="scrolling_table">
 			<table border="1" width="100%" id="projectable">
 				<tr>
 					<th width="3%">No</th> 
@@ -54,8 +56,7 @@ include("config.php");
                             <td>" . $row["enrol_time"] . "</td>";
 							echo'<td>
 							<div class="teacher_pic_div">
-							<img src="enrol/'.$row["child_photo"].'">
-							<label for="child_photo">'.$row["child_photo"]. '</label>
+							<img src="../enrol_pic/'.$row["child_photo"].'">	
 						</div>
 						</td>';
 						echo"
@@ -77,14 +78,27 @@ include("config.php");
 				?>
 			
 			</table>
-		<div>
-			<form method="POST" action="enrollment_list_action.php"  enctype="multipart/form-data">
-					<button type=submit name=submit>SEND</button>
-				</form>
-		</div>
+				</div>
         
-           <script>
-        /function show_AddEntry() {
+        <script>
+
+		function makeTableScroll() {
+        // Constant retrieved from server-side via JSP
+			var maxRows = 4;
+
+			var table = document.getElementById("projectable");
+			var wrapper = table.parentNode;
+			var rowsInTable = table.rows.length;
+			var height = 0;
+			if (rowsInTable > maxRows) {
+				for (var i = 0; i < maxRows; i++) { 
+					height += table.rows[i].clientHeight;
+				}
+				wrapper.style.height = height + "px";
+			}
+		}
+
+        function show_AddEntry() {
 			var x = document.getElementById("challengeDiv");
 			x.style.display = 'block';
 			var firstField = document.getElementById('sem');

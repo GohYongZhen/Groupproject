@@ -11,7 +11,7 @@ $tc_desc = "";
 $tc_pic = "";
 
 //for upload
-$target_dir = "";
+$target_dir = "img/";
 $target_file = "";
 $uploadOk = 0;
 $imageFileType = "";
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $img_path = $row['tc_pic'];
 
                 // Delete the file from the uploads folder
-                $delete_file_path = $img_path;
+                $delete_file_path = 'img/'. $img_path;
 
                 if (!empty($img_path) && file_exists($delete_file_path)) {
                     if (unlink($delete_file_path)) {
@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             tc_name= '$tc_name', 
             tc_desc = '$tc_desc', 
             tc_email = '$tc_email',
-            tc_pic = '$target_file' 
+            tc_pic = '$uploadfileName' 
             WHERE teacher_id = ". $id; 
             $status = update_DBTable($conn, $sql); 
 

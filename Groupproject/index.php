@@ -15,38 +15,25 @@ include("config.php");
 </head>
   <body>
         <?php include('header.php');?>
+
+        
 </br>
-        <hr></hr>
+<hr></hr>
+    <?php
+    $sql = "SELECT * FROM page where pagetype='homepage'";
+    $result = mysqli_query($conn,$sql);
+        while($data=mysqli_fetch_array($result)){
+    ?>
      <div class=" header-banner">
         <div class="banner">
-            <h1>Design <br> <span style="color: #20bcd0;">Landing Page</span></h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore repellat suscipit beatae ducimus, aspernatur culpa soluta eum at unde facilis ipsum veniam enim harum nesciunt consequuntur quo provident, voluptatum nisi commodi reprehenderit aut sint? Laboriosam voluptas provident esse harum explicabo rem, dolor quis unde voluptatem tempore praesentium, accusantium pariatur libero debitis a eius voluptate.</p>
-            <button class="read-button">Read More</button>
+            <h1><?php echo $data['pageTitle']?> <br> <span style="color: #20bcd0;"><?php echo $data['titleDescription']?></span></h1>
+            <p><?php echo $data['pageDescription']?></p>
+            <a href="aboutus.php"><button class="read-button">Read More</button></a>
         </div>
     </div>
-    
+<?php } ?>
     <section>
       <blockquote></blockquote>
-    </section>
-
-    <section class="slogan">
-      <blockquote>Visit to out School</br><h3>Facilities</h3></blockquote>
-    </section>
-
-    <section class="facilities">
-        <div>
-          <img src="images/classroom.jpg">
-          <h3>Classroom</h3>
-        </div>
-                <div>
-          <img src="images/playground.jpg">
-          <h3>Playground</h3>
-        </div>
-        <div>
-          <img src="images/library.jpg">
-          <h3>Library</h3>
-
-        </div>
     </section>
 
 

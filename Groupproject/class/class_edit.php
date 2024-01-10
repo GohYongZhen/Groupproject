@@ -24,7 +24,7 @@ include("../config.php");
     $cl_photo =" ";
     
     if(isset($_GET["id"]) && $_GET["id"] != ""){ ; 
-        $sql = "SELECT * FROM class INNER JOIN teacher ON class.teacher_id = teacher.teacher_id WHERE class_id=". $_GET["id"];
+        $sql = "SELECT * FROM class LEFT JOIN teacher ON class.teacher_id = teacher.teacher_id WHERE class_id=". $_GET["id"];
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);

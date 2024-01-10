@@ -37,8 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Change Password | Admin</title>
-    <link rel="stylesheet" href="../css/admin_login.css">
     <link rel="stylesheet" href="../css/admin_header.css">
+        <link rel="stylesheet" href="../css/admin_login.css">
 </head>
 <body onload="makeTableScroll();">
     <?php include('../admin_header.php');?>

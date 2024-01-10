@@ -35,7 +35,7 @@ include("config.php");
         <div class="card">
           <h2><?php echo $row['faci_name']?></h2>
           <div class="image-container1">
-            <img src="images/<?php echo $row['faci_photo']?>" alt="Real Image" class="realimg" />
+            <img src="facility/img/<?php echo $row['faci_photo']?>" alt="Real Image" class="realimg" />
             <p class="right"><?php echo $row['faci_desc']?></p>
           </div>
         </div>
@@ -48,7 +48,7 @@ include("config.php");
         <div class="card">
           <h2><?php echo $row['faci_name']?></h2>
           <div class="image-container2">
-            <img src="images/<?php echo $row['faci_photo']?>" alt="Real Image" class="realimg" />
+            <img src="facility/img/<?php echo $row['faci_photo']?>" alt="Real Image" class="realimg" />
             <p class="left"><?php echo $row['faci_desc']?></p>
          </div>
         </div>

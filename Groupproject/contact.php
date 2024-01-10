@@ -13,7 +13,6 @@ include("config.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Contact Us Form</title>
     <link rel="stylesheet" href="css/contact.css">
-
 </head>
 <body>
     <?php include('header.php');?>

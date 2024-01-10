@@ -1,7 +1,7 @@
 <?php
 session_start();
 //database connection
-include("config.php");
+include("../config.php");
 ?>
 
 
@@ -13,12 +13,13 @@ include("config.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>DETAILSS
 	</title>
-    <link rel="stylesheet" href="css/admin_header.css">
+    <link rel="stylesheet" href="../css/application_admin_header.css">
+	<link rel="stylesheet" href="../css/admin_header.css">
 
 </head>
 <body>
 
-<?php include('admin_header.php');?>
+<?php include('../admin_header.php');?>
 <h2>Details Of Enrollment</h2> 
       
 
@@ -68,7 +69,9 @@ include("config.php");
 			<div style="text-align: right; padding:10px;">
 				
 			</div>
-			<table border="1" width="100%" id="projectable">
+			<div class="whole">
+			<table border="1" width="100%" id="projectable" class="projectable">
+				<div class="details_container">
 				
 				<?php
 					$sql = "SELECT * FROM enrollment WHERE enrol_id=" . $_GET["id"];
@@ -76,106 +79,93 @@ include("config.php");
 					$result = mysqli_query($conn, $sql);
 					if(mysqli_num_rows($result) > 0){
 						//output data of each row
-						$numrow=1;
-						while($row =mysqli_fetch_assoc($result)){
+						$row = mysqli_fetch_assoc($result);
 							echo "<tr>"; 
 
 							echo "
 							<tr>
-							<th>No</th> 
-							<td>" . $numrow . "</td>
+							<th style='padding:5px 0'>Father Name</th> 
+							<td style='padding:5px 0'>". $row["father_name"] . "</td>
 							</tr>
 
 							<tr>
-							<th>Father Name</th> 
-							<td>". $row["father_name"] . "</td>
+							<th style='padding:5px 0'>Mother Name</th> 
+							<td style='padding:5px 0'>". $row["mother_name"] . "</td>
 							</tr>
 
 							<tr>
-							<th>Mother Name</th> 
-							<td>". $row["mother_name"] . "</td>
+							<th style='padding:5px 0'>Parent Contact</th>
+                            <td style='padding:5px 0'> " . $row["parent_contact"]. "</td>
 							</tr>
 
 							<tr>
-							<th>Parent Contact</th>
-                            <td> " . $row["parent_contact"]. "</td>
-							</tr>
-
-							<tr>
-							<th>Parent Email</th>
-							<td>" . $row["parent_email"] . "</td>
+							<th style='padding:5px 0'>Parent Email</th>
+							<td style='padding:5px 0'>" . $row["parent_email"] . "</td>
 							</tr>
 
 
 							<tr>
-							<th>Child Name</th>
-							<td>". $row["child_name"] . "</td>
+							<th style='padding:5px 0'>Child Name</th>
+							<td style='padding:5px 0'>". $row["child_name"] . "</td>
 							</tr>
 
 							<tr>
-							<th>Age</th>
-                            <td>" . $row["age"] . "</td>
+							<th style='padding:5px 0'>Age</th>
+                            <td style='padding:5px 0'>" . $row["age"] . "</td>
 							</tr>
 
 							<tr>
-							<th>Birthday</th>
-							<td>" . $row["child_birthday"] . "</td>
+							<th style='padding:5px 0'>Birthday</th>
+							<td style='padding:5px 0'>" . $row["child_birthday"] . "</td>
 							</tr>
 
 							<tr>
-							<th>Program</th>
-							<td>" . $row["program"] . "</td>
+							<th style='padding:5px 0'>Program</th>
+							<td style='padding:5px 0'>" . $row["program"] . "</td>
 							</tr>
 
 							<tr>
-							<th>Message</th>
+							<th style='padding:5px 0'>Message</th>
 
-							<td>" . $row["message"] . "</td>
+							<td style='padding:5px 0'>" . $row["message"] . "</td>
 							</tr>
 
 							<tr>
-							<th>Time</th>
-                            <td>" . $row["enrol_time"] . "</td>
+							<th style='padding:5px 0'>Time</th>
+                            <td style='padding:5px 0'>" . $row["enrol_time"] . "</td>
 							</tr>
 							
 							
 							<tr>
-							<th>Status</th>
-                            <td>" . $row["enrol_status"] . "</td>
+							<th style='padding:5px 0'>Status</th>
+                            <td style='padding:5px 0'>" . $row["enrol_status"] . "</td>
 							</tr>";
 
-							echo'<tr>
-							<th>Photo</th>
-                            <td>
-                                <div class="teacher_pic_div">
-								<img src="enrol/'.$row["child_photo"].'">
-									<label for="child_photo">'.$row["child_photo"]. '</label>
-                                </div>
-								<p></p>
-                            </td>';
-
+							echo'<tr>';
 							
-							echo '<td> <a href="enrollment_list.php?id=' . $row["enrol_id"] . '">Back</a>&nbsp;|&nbsp;'; 
-							
-							echo "</tr>" . "\n\t\t"; 
-							$numrow++;
+							echo '<td style="padding:5px 0"> <a href="enrollment_list.php?id=' . $row["enrol_id"] . '">Back</a> &nbsp;';
+							echo "</tr>" . "\n\t\t"; 								
 						}
-					}
+					
 					else{
 						echo '<tr><td colspan="7">0 results</td></tr>';
 					}
 
 					mysqli_close($conn);
 				?>
+				</div>
 			</table>
+				<img src="../enrol_pic/<?php echo $row["child_photo"]?>" class="enrol_img">
+			<label for="child_photo"><?php $row["child_photo"]?></label>
+		</div>
 
 			<div>
     <form style="padding:0 10px;" method="POST" action="enrollment_list_action.php" enctype="multipart/form-data"  onsubmit="return validateForm()" id="myForm">
                 <!--hidden value: id to be submitted to action page--> 
                 <div class="form-container">
                 <input type="hidden" id="id" name="id" value="<?=$_GET['id']?>"> 
-				<th>STATUS:</th>
-				<td>
+				<th style='padding:5px 0'>STATUS:</th>
+				<td style='padding:5px 0'>
 							<input type="radio" name="status" value="accept" >Accept
 							<input type="radio" name="status" value="reject"> Reject
 						</td>
@@ -188,7 +178,7 @@ include("config.php");
 				</div>
         
            <script>
-        /function show_AddEntry() {
+        function show_AddEntry() {
 			var x = document.getElementById("challengeDiv");
 			x.style.display = 'block';
 			var firstField = document.getElementById('sem');

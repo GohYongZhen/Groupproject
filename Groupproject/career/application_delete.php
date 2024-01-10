@@ -1,9 +1,10 @@
 <?PHP 
-include('config.php'); 
+include("../config.php");
 
 //this action is called when the Delete link is clicked 
 if(isset($_GET["id"]) && $_GET["id"] != ""){ 
     $id = $_GET["id"]; 
+    
     $sql =  "DELETE FROM application WHERE ja_id=" . $id . "" ;
     // Get the image filename from the database
     $selectQuery = "SELECT ja_resume FROM application WHERE ja_id = " . $id ." ";
@@ -13,7 +14,7 @@ if(isset($_GET["id"]) && $_GET["id"] != ""){
         $img_path = $row['ja_resume'];
 
         // Delete the file from the uploads folder
-        $delete_file_path = './uploads/' . $img_path;
+        $delete_file_path = 'uploads/' . $img_path;
 
         if (!empty($img_path) && file_exists($delete_file_path)) {
             if (unlink($delete_file_path)) {

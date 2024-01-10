@@ -1,35 +1,4 @@
-<?php
-include('config.php');
-
-if(isset($_POST['submit'])){
-    $father_name = $_POST["father_name"];
-    $mother_name = $_POST["mother_name"];
-    $parent_contact = $_POST["parent_contact"];
-    $parent_email = $_POST["parent_email"];
-    $child_name = $_POST["child_name"];
-    $age = $_POST["age"];
-    $program = $_POST["program"];
-    $message = $_POST["message"];
-    $child_birthday = $_POST["child_birthday"];
-
-    $child_photo = $_FILES["child_photo"]['name'];
-
-
-    $query = "INSERT INTO enrollment (father_name, mother_name, parent_contact, 
-            parent_email, child_name, age, program, message, child_photo, child_birthday) 
-            VALUES ('$father_name', '$mother_name', '$parent_contact', 
-            '$parent_email', '$child_name', '$age', '$program', '$message', '$child_photo', '$child_birthday')";
-
-    $result = mysqli_query($conn, $query);
-
-    if($result){
-        echo "<script>alert('Enrollment Details sent successfully.');</script>";
-        echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
-    }else{
-        echo "<script>alert('Something went wrong. Please try again.');</script>";
-    }
-}
-?>
+<?php include("config.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +25,7 @@ if(isset($_POST['submit'])){
         
 <div class="fill">
   <div class="form-container">
-    <form method="post" enctype="multipart/form-data">
+    <form action="enrollment_action.php" method="post" enctype="multipart/form-data">
            <h2>Start your Child’s Early Education</h2>
             <input type="text" class="box1" id="fathername" name="father_name" placeholder="Father Name" required>
             <input type="text" class="box1" id="mothername" name="mother_name" placeholder="Mother Name" required>

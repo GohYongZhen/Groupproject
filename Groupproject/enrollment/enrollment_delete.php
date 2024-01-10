@@ -1,5 +1,5 @@
 <?PHP 
-include('config.php'); 
+include("../config.php");
 
 //this action is called when the Delete link is clicked 
 if(isset($_GET["id"]) && $_GET["id"] != ""){ 
@@ -13,7 +13,7 @@ if(isset($_GET["id"]) && $_GET["id"] != ""){
         $img_path = $row['child_photo'];
 
         // Delete the file from the uploads folder
-        $delete_file_path = './enrol/' . $img_path;
+        $delete_file_path = '../enrol_pic/' . $img_path;
 
         if (!empty($img_path) && file_exists($delete_file_path)) {
             if (unlink($delete_file_path)) {

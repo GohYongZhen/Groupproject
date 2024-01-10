@@ -13,13 +13,13 @@ echo'
 
     <div id="sideNav" class="sidenav">
       <a href="../admin/admin.php">Admin</a>
-      <a href="enrolment.php">Enrolment</a>
-      <a href="application.php">Application</a>
+      <a href="../enrollment/enrollment_list.php">Enrolment</a>
+      <a href="../career/application_list.php">Application</a>
       <a href="../message/message.php">Messages</a>
       <a href="../teacher/teacher.php">Teacher</a>
-      <a href="../adminClass/admin_class.php">Class</a>
-      <a href="#">Facilities</a>
-      <a href="#">Edit Pages</a>
+      <a href="../class/class.php">Class</a>
+      <a href="../facility/facility.php">Facilities</a>
+      <a href="../editpages/editpages.php">Edit Pages</a>
     </div>
 
     <script>

@@ -25,7 +25,7 @@ include("config.php");
             <div class="about-content">
         <section id="sectiontop">
             <h1><?php echo $data['pageTitle']?></h1>
-            <p>Our historical story</p> 
+            <p><?php echo $data['smallDescription']?></p> 
         </section>
         <section>
             <img src="images/<?php echo $data['img_path']?>" alt="">
@@ -33,7 +33,6 @@ include("config.php");
                 <h2><?php echo $data['titleDescription']?></h2>
                 <p><?php echo $data['pageDescription']?></p>
 
-                <button class="readmore">Readmore</button>
             </div>
 
         </section>

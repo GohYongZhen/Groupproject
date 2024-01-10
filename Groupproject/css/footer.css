@@ -34,8 +34,12 @@ h3 {
 .footer-content ul {
   text-align: center;
 }
+
 .list {
   padding: 0;
+}
+.list a {
+  color: white;
 }
 .list li {
   width: auto;
@@ -71,6 +75,7 @@ h3 {
   color: white;
   font-size: 25px;
 }
+
 a {
   text-decoration: none;
 }

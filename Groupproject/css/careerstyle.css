@@ -77,11 +77,18 @@ button:hover {
 .form-group {
   
   margin-top: 0px;
-  font-size: 30px;
+  font-size: 20px;
   margin-bottom: 50px; /* Adjust the value to increase or decrease space */
 }
 
-
+.center-form {
+  display: flex;
+  padding-top: 0%;
+  justify-content:center;
+  align-items: center;
+  height: auto; 
+  width:fit-content;/* Optional: Adjusts the height based on the viewport */
+}
 header {
   
   background-color: rgba(255, 207, 105, 0.85);
@@ -95,7 +102,6 @@ header {
   padding-bottom: 5%;
   padding-left: 15%;
   width:100%;
-  font-size:large;
   
 }
 

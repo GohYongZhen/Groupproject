@@ -1,6 +1,6 @@
 <?PHP
 session_start();
-include('config.php');
+include("../config.php");
 
 //variables
 $father_name="";

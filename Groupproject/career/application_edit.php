@@ -1,7 +1,7 @@
 <?php
 session_start();
 //database connection
-include("config.php");
+include("../config.php");
 ?>
 
 
@@ -12,13 +12,15 @@ include("config.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>UPDATE JA Form</title>
-    <link rel="stylesheet" href="css/application_admin_header.css">
+    <link rel="stylesheet" href="../css/application_admin_header.css">
+     <link rel="stylesheet" href="../css/admin_header.css">
+
 
 </head>
 <body>
    
-    
-    <h2>Edit INFO</h2> 
+    <?php include('../admin_header.php');?>
+    <h2 style="margin-left: 25%;">Edit INFO</h2> 
         <?php 
             $id=null;
             $ja_name="";
@@ -48,74 +50,18 @@ include("config.php");
                 }  
            }  
             
-        ?> 
-        
-
-        <div style="padding:0 10px;">
-			<div style="text-align: right; padding:10px;" >
-				
-			</div>
-			<table border="1" width="100%" id="projectable">
-				<tr>
-					
-					<th width="10%">Name</th> 
-                    <th width="10%">Contact</th> 
-                    <th width="10%">Email</th> 
-					<th width="10%">Age</th> 
-					<th width="10%">Birthday</th> 
-					<th width="15%">Status</th> 
-                    <th width="15%">Nationalities</th> 
-					<th width="10%">File</th> 
-				</tr>
-				<?php
-					$sql =  "SELECT * FROM application WHERE ja_id=" . $_GET["id"] . " ";
-					$result = mysqli_query($conn, $sql);
-					if(mysqli_num_rows($result) > 0){
-						//output data of each row
-						$numrow=1;
-						while($row =mysqli_fetch_assoc($result)){
-							echo "<tr>"; 
-							echo 
-							"
-                            <td>". $row["ja_name"] . "</td>
-                            <td> " . $row["ja_contact"]. "</td>
-							<td>" . $row["ja_email"] . "</td>
-                            <td>" . $row["ja_age"] . "</td>
-							<td>" . $row["ja_birthday"] . "</td>
-                            <td>" . $row["ja_status"] . "</td>
-							<td>" . $row["ja_nationality"] . "</td>
-							<td>" . $row["ja_resume"] . "</td>
-                            "; 
-							
-							echo "</tr>" . "\n\t\t"; 
-							$numrow++;
-						}
-					}
-					else{
-						echo '<tr><td colspan="7">0 results</td></tr>';
-					}
-
-					mysqli_close($conn);
-				?>
-			</table>
-
-        <div style="padding:0 10px;" id="careerDiv"> 
-               
-             <div>
-    <form style="padding:0 10px;" method="POST" action="application_edit_action.php" enctype="multipart/form-data"  onsubmit="return validateForm()" id="myForm">
+        ?>          
+    <div class="edit_container">
+        <form style="padding:0 10px;" method="POST" action="application_edit_action.php" enctype="multipart/form-data"  onsubmit="return validateForm()" id="myForm">
                 <!--hidden value: id to be submitted to action page--> 
-                <div class="form-container">
+    <div class="form-container">
                 <input type="hidden" id="id" name="id" value="<?=$_GET['id']?>"> 
                 
-                
-
-          
-
-         <tr>
-         <span class="custom-label">Name:</span>
-         <p></p>
-                        <td> 
-                        <?php 
+            <tr>
+            <div class="input_row">
+                <span class="custom-label">Name:</span>
+                <td> 
+                    <?php 
                     if($ja_name!=""){ 
                         echo '<input type="text" name="ja_name" size="5" value="' . $ja_name . '" required>'; 
                     } 
@@ -126,32 +72,31 @@ include("config.php");
                         } 
                     ?> 
                 </td> 
-         <p></p>
-         </tr>
-
-                        
-         <tr> 
-         <span class="custom-label">Contact:</span>
-         <p></p>
-                <td> 
-                        <?php 
-                    if($contact!=""){ 
-                        echo '<input type="text" name="contact" size="5" value="' . $contact . '" required>'; 
-                    } 
-                    else { 
-                    ?> 
-                        <input type="text" name="contact" size="5" required> 
-                    <?php 
+                <span class="custom-label">Contact:</span>
+                
+                    <td> 
+                            <?php 
+                        if($contact!=""){ 
+                            echo '<input type="text" name="contact" size="5" value="' . $contact . '" required>'; 
                         } 
-                    ?> 
-                </td> 
-                <p></p>
-         </tr> 
+                        else { 
+                        ?> 
+                            <input type="text" name="contact" size="5" required> 
+                        <?php 
+                            } 
+                        ?> 
+                    </td> 
+                    
+             
+            </div>
+            </tr>
+         
 
 
-         <tr> 
+         <tr>
+    <div class="input_row">     
          <span class="custom-label">Email:</span>
-         <p></p>
+         
                 <td> 
                         <?php 
                     if($email!=""){ 
@@ -164,10 +109,6 @@ include("config.php");
                         } 
                     ?> 
                 </td> 
-                <p></p>
-         </tr> 
-
-         <tr> 
          <span class="custom-label">Age:</span>
          
                 <td> 
@@ -182,143 +123,132 @@ include("config.php");
                         } 
                     ?> 
                 </td> 
-                <p></p>
-                    </tr> 
-
-                    <tr>
-                    <span class="custom-label">Birthday:</span>
-                    
-                    <td>
-                    <input type="date" name="birthday"  value="<?php echo $birthday;?>">
-                    </td> 
-                    <p></p>
-                    </tr> 
-
-
-                    <tr>
-                                    <p></p>
-                                    <span class="custom-label">Satus:</span>
-                                    <p></p>
-                                    <select name="status" id="status" reuired>
-                                        <option value="" ><?php echo $status;?></option>
-                                        <?php
-                                                 $status = array(
-                                                    "Single",
-                                                    "Married",
-                                                    "Divorced",
-                                                    );
-                                        // Loop through the nationalities array to generate options
-                                        foreach ($status as $status) {
-                                            echo "<option value=\"$status\">$status</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                    <br>
-                                    <p></p>
-                                </tr>
-
-
-                    <tr>
-                    <p></p>                                                                     
-                    <span class="custom-label">Nationalities:</span>
-                    <p></p>
-                    <select name="nationality" id="nationality" required>
-                        <option value="" ><?php echo $nationality;?></option>
-                        <?php
-
-                                    $nationality = array(
-                                        "Afghan",
-                                        "Albanian",
-                                        "Algerian",
-                                        "American",
-                                        "Bahamian",
-                                        "Bahraini",
-                                        "Bangladeshi",
-                                        "Barbadian",
-                                        "Cambodian",
-                                        "Cameroonian",
-                                        "Canadian",
-                                        "Cape Verdean",
-                                        "Chinese",
-                                        "Indian",
-                                        "Indonesian",
-                                        "Iranian",
-                                        "Iraqi",
-                                        "Israeli",
-                                        "Japanese",
-                                        "Jordanian",
-                                        "Kazakhstani",
-                                        "Kuwaiti",
-                                        "Laotian",
-                                        "Lebanese",
-                                        "Malaysian",
-                                        "Maldivian",
-                                        "Mongolian",
-                                        "Nepali",
-                                        "North Korean",
-                                        "Omani",
-                                        "Pakistani",
-                                        "Palestinian",
-                                        "Qatari",
-                                        "Saudi Arabian",
-                                        "Singaporean",
-                                        "South Korean",
-                                        "Sri Lankan",
-                                        "Syrian",
-                                        "Taiwanese",
-                                        "Tajikistani",
-                                        "Thai",
-                                        "Turkish",
-                                        "Turkmen",
-                                        "Emirati",
-                                        "Uzbekistani",
-                                        "Vietnamese",
-                                        "Yemeni"
-                                            // Add more nationalities as needed
-                                        );
-                        // Loop through the nationalities array to generate options
-                        foreach ($nationality as $nationality) {
-                            echo "<option value=\"$nationality\">$nationality</option>";
-                        }
-                        ?>
-                    </select>
-                    <br>
-                    <p></p>
-                </tr>
-
-                
-
-                                   
-                            <tr>
-                            <span class="custom-label">Uploaded File:</span>
-                            <td>:</td> 
-                            <td>
-                            <input type="text" disabled value="<?=$resume;?>">
-                            </td> 
-                            <p></p>
-                        </tr> 
-
-                     <tr >
-                     <span class="custom-label">New File To Upload:</span>
-                           
-                            <input type="file" name="file" id="file" >
-                            <br>
-                            
-                            <p></p>
-                            <button type="submit" value="Submit" class="btn">Update </button>  
-                            <p></p>
-                            <button type="reset" value="Reset" class="btn" onclick="resetForm()" >Reset </button>  
-                            <p></p>
-                            <button type="button" value="Clear" class="btn" onclick="resetForm()">Clear </button>  
-                            <p></p>
-                            <button type="button" class="btn" onclick="goBack()">Go Back</button>
-                            
-                        </tr>
-
-                        </form>
         </div>
-                    </div>
-           <script>
+         </tr>        
+
+            <tr>
+            <div class="input_row">     
+            <span class="custom-label">Birthday:</span>
+            
+            <td>
+                <input type="date" name="birthday"  value="<?php echo $birthday;?>">
+            </td>                            
+                <span class="custom-label">Satus:</span>
+                
+                <select name="status" id="status" reuired>
+                    <option value="" ><?php echo $status;?></option>
+                    <?php
+                                $status = array(
+                                "Single",
+                                "Married",
+                                "Divorced",
+                                );
+                    // Loop through the nationalities array to generate options
+                    foreach ($status as $status) {
+                        echo "<option value=\"$status\">$status</option>";
+                    }
+                    ?>
+                </select>                         
+            </div>              
+            </tr>
+
+
+            <tr>
+            <div class="input_row">                                                                                         
+                <span class="custom-label">Nationalities:</span>
+                
+                <select name="nationality" id="nationality" required>
+                    <option value="" ><?php echo $nationality;?></option>
+                    <?php
+
+                                $nationality = array(
+                                    "Afghan",
+                                    "Albanian",
+                                    "Algerian",
+                                    "American",
+                                    "Bahamian",
+                                    "Bahraini",
+                                    "Bangladeshi",
+                                    "Barbadian",
+                                    "Cambodian",
+                                    "Cameroonian",
+                                    "Canadian",
+                                    "Cape Verdean",
+                                    "Chinese",
+                                    "Indian",
+                                    "Indonesian",
+                                    "Iranian",
+                                    "Iraqi",
+                                    "Israeli",
+                                    "Japanese",
+                                    "Jordanian",
+                                    "Kazakhstani",
+                                    "Kuwaiti",
+                                    "Laotian",
+                                    "Lebanese",
+                                    "Malaysian",
+                                    "Maldivian",
+                                    "Mongolian",
+                                    "Nepali",
+                                    "North Korean",
+                                    "Omani",
+                                    "Pakistani",
+                                    "Palestinian",
+                                    "Qatari",
+                                    "Saudi Arabian",
+                                    "Singaporean",
+                                    "South Korean",
+                                    "Sri Lankan",
+                                    "Syrian",
+                                    "Taiwanese",
+                                    "Tajikistani",
+                                    "Thai",
+                                    "Turkish",
+                                    "Turkmen",
+                                    "Emirati",
+                                    "Uzbekistani",
+                                    "Vietnamese",
+                                    "Yemeni"
+                                        // Add more nationalities as needed
+                                    );
+                    // Loop through the nationalities array to generate options
+                    foreach ($nationality as $nationality) {
+                        echo "<option value=\"$nationality\">$nationality</option>";
+                    }
+                    ?>
+                </select>
+                
+                <span class="custom-label">Uploaded File:</span>
+                <td>:</td> 
+                <td>
+                <input type="text" disabled value="<?=$resume;?>">
+                </td> 
+            </div>        
+            </tr> 
+
+            <tr >
+            <span class="custom-label">New File To Upload:</span>
+                <input type="file" name="file" id="file" >
+
+                <button type="submit" value="Submit" class="btn">Update </button>  
+                
+                <button type="reset" value="Reset" class="btn" onclick="resetForm()" >Reset </button>  
+                
+                <button type="button" value="Clear" class="btn" onclick="resetForm()">Clear </button>  
+                
+                <button type="button" class="btn" onclick="goBack()">Go Back</button>
+            </tr>
+                            
+                            
+            <div class="input_row">                    
+
+            </div>
+            
+
+        </form>
+        
+</div>
+    <script>
         //reset form after modification to a php echo to fields//
 
         function resetForm() { 
@@ -355,7 +285,24 @@ include("config.php");
             function goBack() {
                 // Use the history object to navigate back
                 window.history.back();
+            }
+
+            //scrollable table
+            function makeTableScroll() {
+                // Constant retrieved from server-side via JSP
+                var maxRows = 15;
+
+                var table = document.getElementById("admin_table");
+                var wrapper = table.parentNode;
+                var rowsInTable = table.rows.length;
+                var height = 0;
+                if (rowsInTable > maxRows) {
+                    for (var i = 0; i < maxRows; i++) { 
+                        height += table.rows[i].clientHeight;
+                    }
+                    wrapper.style.height = height + "px";
                 }
+            }
     </script>
 </body>
 </html>

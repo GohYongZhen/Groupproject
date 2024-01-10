@@ -54,7 +54,7 @@ include("../config.php");
                     $keywords = explode(" ", $search);
 
                     // Prepare the SQL query with multiple LIKE conditions
-                    $sql = "SELECT * FROM class INNER JOIN teacher ON class.teacher_id = teacher.teacher_id WHERE (";
+                    $sql = "SELECT * FROM class LEFT JOIN teacher ON class.teacher_id = teacher.teacher_id WHERE (";
 
                     // Build the conditions dynamically for single keyword
                     $conditions = [];

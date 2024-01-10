@@ -40,7 +40,7 @@ include("../config.php");
     <div class="teacher_add_div">
         <h1>Edit teacher</h1>
 
-        <form action="class_edit_action.php" method="post"  enctype="multipart/form-data">
+        <form action="teacher_edit_action.php" method="post"  enctype="multipart/form-data">
             <!--id--> 
             <input type="text" id="teacher_id" name="teacher_id" value="<?=$_GET['id']?>" hidden> 
             

@@ -39,7 +39,7 @@ include("../config.php");
             </thead>
                 
                 <?php
-                    $sql =  "SELECT * FROM class INNER JOIN teacher ON class.teacher_id = teacher.teacher_id;";
+                    $sql =  "SELECT * FROM class LEFT JOIN teacher ON class.teacher_id = teacher.teacher_id;";
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result) > 0){
                         //output data of each row

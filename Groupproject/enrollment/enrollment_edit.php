@@ -1,7 +1,7 @@
 <?php
 session_start();
 //database connection
-include("config.php");
+include("../config.php");
 ?>
 
 <!DOCTYPE html>
@@ -11,11 +11,12 @@ include("config.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>UPDATE JA Form</title>
-    <link rel="stylesheet" href="css/application_admin_header.css">
+    <link rel="stylesheet" href="../css/application_admin_header.css">
+    <link rel="stylesheet" href="../css/admin_header.css">
 
 </head>
 <body>
-   
+    <?php include('../admin_header.php');?>
     
     <h2>Edit INFO</h2> 
     <?php 
@@ -57,14 +58,15 @@ include("config.php");
            }  
             
         ?> 
-
+ <div class="edit_container">
 <form style="padding:0 10px;" method="POST" action="enrollment_edit_action.php" enctype="multipart/form-data"  onsubmit="return validateForm()" id="myForm">
-                <!--hidden value: id to be submitted to action page--> 
-                <div class="form-container">
+ <div class="form-container">   
+<!--hidden value: id to be submitted to action page--> 
                 <input type="text" id="id" name="id" value="<?=$_GET['id']?>"hidden>
-                
+               
                     <tr>
-                        <th>FATHER NAME</th>
+                        <div class="input_row">
+                        <span>FATHER NAME</span>
                                 <td> 
                                 <?php 
                             if($father_name!=""){ 
@@ -77,11 +79,8 @@ include("config.php");
                                 } 
                             ?> 
                         </td> 
-                        </br>
-                    </tr>
-
-                    <tr>
-                        <th>MOTHER NAME</th>
+                        
+                        <span>MOTHER NAME</span>
                                 <td> 
                                 <?php 
                             if($mother_name!=""){ 
@@ -94,12 +93,14 @@ include("config.php");
                                 } 
                             ?> 
                         </td> 
-                        </br>
+                        
+                        </div>
                     </tr>
 
 
                     <tr>
-                        <th>CONTACT</th>
+                         <div class="input_row">
+                        <span>CONTACT</span>
                                 <td> 
                                 <?php 
                             if($parent_contact!=""){ 
@@ -112,12 +113,9 @@ include("config.php");
                                 } 
                             ?> 
                         </td> 
-                        </br>
-                    </tr>
+                        
 
-
-                    <tr>
-                        <th>EMAIL</th>
+                        <span>EMAIL</span>
                                 <td> 
                                 <?php 
                             if($parent_email!=""){ 
@@ -130,11 +128,13 @@ include("config.php");
                                 } 
                             ?> 
                         </td> 
-                        </br>
+                        
+                         </div>
                     </tr>
 
                     <tr>
-                        <th>CHILDREN NAME</th>
+                         <div class="input_row">
+                        <span>CHILDREN NAME</span>
                                 <td> 
                                 <?php 
                             if($child_name!=""){ 
@@ -147,11 +147,9 @@ include("config.php");
                                 } 
                             ?> 
                         </td> 
-                        </br>
-                    </tr>
-
-                    <tr>
-                        <th>PROGRAM</th>
+                        
+       
+                        <span>PROGRAM</span>
                                 <td> 
                                 <select size="1" name="program" required> 
                         <option value=""><?php echo $program;?></option> 
@@ -182,21 +180,21 @@ include("config.php");
                             ?> 
 		                        </select> 
                         </td> 
-                        </br>
+                        
+                         </div>
                     </tr>
 
                     <tr>
-                        <th>MESSAGE</th> 
-                        </br>
+                         <div class="input_row">
+                        <span>MESSAGE</span> 
+                        
                         <td>
                            
                         <textarea rows="4" name="message" cols="20" rows="7"><?php echo $message;?></textarea> 
                         </td> 
-                        </br>
-				</tr> 
+                        
 
-                    <tr>
-                        <th>AGE</th>
+                        <span>AGE</span>
                        <td> 
                                 <select size="1" name="age" required> 
                         <option value=""><?php echo $age;?></option> 
@@ -230,45 +228,39 @@ include("config.php");
                             ?> 
                             </select>
                         </td> 
-                        
+                         </div>
                     </tr>
 
-                    <br></br>
                       
 
 
 
                     <tr>
-                        <th>BIRTHDAY</th>
+                        <div class="input_row">
+                        <span>BIRTHDAY</span>
                                 <td> 
                                 <input type="date" name="child_birthday"  value="<?php echo $child_birthday;?>">
                         </td> 
-                        </br>
-                    </tr>
+                        
 
-
-
-
-                    <tr>
-                        <th>UPLOADED PHOTO</th>
+                        <span>UPLOADED PHOTO</span>
                         <td>:</td> 
                             <td>
                             <input type="text" disabled value="<?=$photo;?>">
                             </td> 
-                        </br>
+                        
+                        </div>
                     </tr>
 
                     <tr>
-                        <th>NEW PHOTO TO UPLOAD</th>
+                         <div class="input_row">
+                        <span>NEW PHOTO TO UPLOAD</span>
                         <td>:</td> 
                         <input type="file" name="file" id="file" >
-                            <br>
                             
-                        </br>
+                            
                         
-                    </tr>
-
-                    <tr>
+                        
                             <button type="submit" value="Submit" class="btn">Update </button>  
                             
                             <button type="reset" value="Reset" class="btn" onclick="resetForm()" >Reset </button>  
@@ -276,13 +268,13 @@ include("config.php");
                             <button type="button" value="Clear" class="btn" onclick="resetForm()">Clear </button>  
                            
                             <button type="button" class="btn" onclick="goBack()">Go Back</button>
-
+                         </div>
                     </tr>
 
                
-            </div>
+ </div> 
     </form>
-
+       </div>
              <script>
         //reset form after modification to a php echo to fields//
 

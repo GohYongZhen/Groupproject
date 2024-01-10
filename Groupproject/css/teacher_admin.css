@@ -1,347 +1,349 @@
-.container{
-    width:70%;
-    margin-left: 22.5%;
-    margin-right: 7.5%;
-    padding-top: 30px;
+.container {
+  width: 70%;
+  margin-left: 22.5%;
+  margin-right: 7.5%;
+  padding-top: 30px;
 }
 
+.container h1 {
+  width: 98%;
+  height: 100%;
+  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
 
-.container h1{
-    width: 98%;
-    height: 100%;
-    margin: 5px;
-    margin-left: auto;
-    margin-right: auto;
+  text-align: left;
 
-    text-align: left;
-
-    font-size: 30px;
-    font-weight: normal;
+  font-size: 30px;
+  font-weight: normal;
 }
 
-.scrolling_table{
-    overflow-y: auto;
-    border: solid 2px #555;
+.scrolling_table {
+  overflow-y: auto;
+  border: solid 2px #555;
 }
 
-.teacher_table{
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-    
-    font-size: 13px;
-    border: solid 2px #555;
+.teacher_table {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
 
+  font-size: 13px;
+  border: solid 2px #555;
 }
 
-.teacher_table th, td{
-    padding: 10px 20px;
+.teacher_table th,
+td {
+  padding: 10px 20px;
 
-    border: solid 2px #555;
-    color:black;
-    background-color: #fff9fe;
+  border: solid 2px #555;
+  color: black;
+  background-color: #fff9fe;
 }
 
-.teacher_table th{
-    background-color: #84c3c9;
-    font-size: 18px;
-    font-weight: bold;
+.teacher_table th {
+  background-color: #84c3c9;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.teacher_table td{
-    border: solid 1px #d9d4da;
+.teacher_table td {
+  border: solid 1px #d9d4da;
 }
 
-.teacher_pic_div{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
+.teacher_pic_div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
 }
 
-.teacher_pic_div label{
-    font-size: 20px;
-    padding: 5px 30px;
+.teacher_pic_div label {
+  font-size: 20px;
+  padding: 5px 30px;
 
-    align-items: center;
-    text-align: center;
-    background-color: #fefefe;
-    border: solid 2px #0e7995;
-    border-radius: 50px;
-    color: #0e7995;
+  align-items: center;
+  text-align: center;
+  background-color: #fefefe;
+  border: solid 2px #0e7995;
+  border-radius: 50px;
+  color: #0e7995;
 }
 
-.teacher_table img{
-    width: 100%;
-    height: 100%;
+.teacher_table img {
+  width: 100%;
+  height: 100%;
 
-    margin: 10px 0px;
-    box-shadow: -1px 3px #698ca1;
+  margin: 10px 0px;
+  box-shadow: -1px 3px #698ca1;
 }
 
-.button_row{
-    width: 100%;
-    text-align: center;
+.button_row {
+  width: 100%;
+  text-align: center;
 }
 
-.add_button{
-    padding: 3px 30px;
-    text-align: center;
-    background-color: #35a2a9;
-    border: none;
-    border-radius: 50px;
+.add_button {
+  padding: 3px 30px;
+  text-align: center;
+  background-color: #35a2a9;
+  border: none;
+  border-radius: 50px;
 
-    font-size: 15px;
-    color: #fefefe;
+  font-size: 15px;
+  color: #fefefe;
 }
 
-.add_button:hover{
-    transition:all  0.2s ease 0s;
-    cursor: pointer;
-    opacity: 0.5;
+.add_button:hover {
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  opacity: 0.5;
 }
 
-.search{
-    display: flex;
-    justify-content: space-between;
+.search {
+  display: flex;
+  justify-content: space-between;
 }
 
-.search form{
-    margin: 5px 0px;
-    text-align:right; 
+.search form {
+  margin: 5px 0px;
+  text-align: right;
 }
 
-.search input[type="text"]{
-    border: solid 1px #555;
-    border-radius: 3px;
+.search input[type="text"] {
+  border: solid 1px #555;
+  border-radius: 3px;
 }
 
-.search input[type="submit"]{
-    padding: 3px 10px;
-    text-align: center;
-    background-color: #35a2a9;
-    border: none;
-    border-radius: 50px;
+.search input[type="submit"] {
+  padding: 3px 10px;
+  text-align: center;
+  background-color: #35a2a9;
+  border: none;
+  border-radius: 50px;
 
-    font-size: 15px;
-    color: #fefefe;
+  font-size: 15px;
+  color: #fefefe;
 }
 
-.search input[type="submit"]:hover{
-    transition:all  0.2s ease 0s;
-    cursor: pointer;
-    opacity: 0.5;
+.search input[type="submit"]:hover {
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  opacity: 0.5;
 }
 
+.teacher_button_action a {
+  padding: 3px 20px;
+  text-align: center;
+  background-color: #35a2a9;
+  border: none;
+  border-radius: 50px;
 
-.teacher_button_action a{
-    padding: 3px 20px;
-    text-align: center;
-    background-color: #35a2a9;
-    border: none;
-    border-radius: 50px;
-
-    font-size: 15px;
-    color: #fefefe;
-    text-decoration: none;
+  font-size: 15px;
+  color: #fefefe;
+  text-decoration: none;
 }
 
-.teacher_button_action button:hover{
-    transition:all  0.2s ease 0s;
-    cursor: pointer;
-    
-    background-color: #35a2a9;
-    opacity: 1.0;
+.teacher_button_action button:hover {
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+
+  background-color: #35a2a9;
+  opacity: 1;
 }
 
 /*teacher add css*/
 
-.teacher_add_div{
-    height: 75%;
-    margin:25px;
-    margin-left: 25%;
-    margin-right: 10%;
-    padding:15px;
+.teacher_add_div {
+  height: 75%;
+  margin: 25px;
+  margin-left: 25%;
+  margin-right: 10%;
+  padding: 15px;
 
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
 
-    background-color: #fefefe;
+  background-color: #fefefe;
 }
 
-.teacher_add_div h1{
-    width: 60%;
-    margin: 5px;
-    margin-left: auto;
-    margin-right: auto;
+.teacher_add_div h1 {
+  width: 60%;
+  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
 
-    text-align: left;
+  text-align: left;
 
-    font-size: 25px;
-    font-weight: normal;
+  font-size: 25px;
+  font-weight: normal;
 }
 
-.teacher_add_div form{
-    margin:0;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20%;
-    height: 100%;
+.teacher_add_div form {
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20%;
+  height: 100%;
 
-    width: 60%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
 
-    border: solid 1px #ccc;
+  border: solid 1px #ccc;
 
-    font-size: 15px;
+  font-size: 15px;
 }
 
-.name_email_div{
-    width: 100%;
-    margin-top: 5px;
-    display: flex;
-    justify-content: space-between;
+.name_email_div {
+  width: 100%;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.name_email_div label, input{
-    margin-right: 10px;
+.name_email_div label,
+input {
+  margin-right: 10px;
 }
 
-.teacher_add_div input{
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+.teacher_add_div input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
-.teacher_add_div label{
-    margin-top: 5px;
-    margin-bottom: 5px;
+.teacher_add_div label {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.teacher_add_div textarea{
-    padding: 5px;
-    margin-bottom: 10px;
-    resize: none;
+.teacher_add_div textarea {
+  padding: 5px;
+  margin-bottom: 10px;
+  resize: none;
 }
 
-.teacher_add_div input[type="file"]{
-    margin-right: 0px;
-    
+.teacher_add_div input[type="file"] {
+  margin-right: 0px;
 }
 
-.teacher_add_div input[type="file"]::file-selector-button{
-    padding: 5px 15px;
-    margin-right: 20px;
-    background-color: #35a2a9;
-    border: none;
-    border-radius: 10px;
+.teacher_add_div input[type="file"]::file-selector-button {
+  padding: 5px 15px;
+  margin-right: 20px;
+  background-color: #35a2a9;
+  border: none;
+  border-radius: 10px;
 
-    font-size: 15px;
-    color: #fefefe;
+  font-size: 15px;
+  color: #fefefe;
 }
 
-.upload_pic_div{
-    display: flex;
-    align-items: center;
-    border: solid 1px #ccc;
-    margin-bottom: 10px;
+.upload_pic_div {
+  display: flex;
+  align-items: center;
+  border: solid 1px #ccc;
+  margin-bottom: 10px;
 }
 
-.upload_pic_div label{
-    width: 30%;
-    margin-top: 5px;
-    margin-bottom: 5px;
+.upload_pic_div label {
+  width: 30%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.upload_pic_div input{
-    margin-bottom: 0;
-    padding: 10px 20px;
+.upload_pic_div input {
+  margin-bottom: 0;
+  padding: 10px 20px;
 }
 
-.upload_pic_div img{
-    width: 20%;
+.upload_pic_div img {
+  width: 20%;
 }
 
-.teacher_button{
-    width: 30%;
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+.teacher_button {
+  width: 30%;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-.teacher_button button{
-    padding: 3px 30px;
-    text-align: center;
-    background-color: #35a2a9;
-    border: none;
-    border-radius: 50px;
+.teacher_button button {
+  padding: 3px 30px;
+  text-align: center;
+  background-color: #35a2a9;
+  border: none;
+  border-radius: 50px;
 
-    font-size: 15px;
-    color: #fefefe;
+  font-size: 15px;
+  color: #fefefe;
 }
 
-.teacher_button button:hover{
-    transition:all  0.2s ease 0s;
-    cursor: pointer;
-    opacity: 0.5;
+.teacher_button button:hover {
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  opacity: 0.5;
 }
 
-.teacher_add_button{
-    display: flex;
-    justify-content: space-evenly;
+.teacher_add_button {
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.teacher_add_button input[type="submit"], input[type="reset"]{
-    text-align: center;
-    margin: 0px 20px;
-    margin-bottom: 10px;
-    width: 50%;
+.teacher_add_button input[type="submit"],
+input[type="reset"] {
+  text-align: center;
+  margin: 0px 20px;
+  margin-bottom: 10px;
+  width: 50%;
 }
 
-.teacher_add_div input[type="submit"], input[type="reset"]{
-    margin-right: 0;
-    padding: 5px 20px;
-    align-items: center;
-    text-align: center;
-    background-color: #35a2a9;
-    border: none;
-    border-radius: 50px;
+.teacher_add_div input[type="submit"],
+input[type="reset"] {
+  margin-right: 0;
+  padding: 5px 20px;
+  align-items: center;
+  text-align: center;
+  background-color: #35a2a9;
+  border: none;
+  border-radius: 50px;
 
-    font-size: 15px;
-    color: #fefefe;
+  font-size: 15px;
+  color: #fefefe;
 }
 
-.teacher_add_div input[type="submit"]:hover, input[type="reset"]:hover, input[type="file"]::file-selector-button:hover{
-    transition:all  0.2s ease 0s;
-    cursor: pointer;
-    opacity: 0.5;
+.teacher_add_div input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="file"]::file-selector-button:hover {
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  opacity: 0.5;
 }
 
-.teacher_add_div button{
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px 20px;
-    text-align: center;
-    background-color: #fefefe;
-    border: solid 1px #35a2a9;
-    border-radius: 50px;
+.teacher_add_div button {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 20px;
+  text-align: center;
+  background-color: #fefefe;
+  border: solid 1px #35a2a9;
+  border-radius: 50px;
 
-    font-size: 15px;
-    color: #35a2a9;
+  font-size: 15px;
+  color: #35a2a9;
 }
 
-.teacher_add_div button:hover{
-    transition:all  0.2s ease 0s;
-    cursor: pointer;
-    background-color: #35a2a9;
-    color: #fefefe;
-    border: none;
-    opacity: 0.5;
+.teacher_add_div button:hover {
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  background-color: #35a2a9;
+  color: #fefefe;
+  border: none;
+  opacity: 0.5;
 }

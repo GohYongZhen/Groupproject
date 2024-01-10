@@ -1,0 +1,310 @@
+.pages_container {
+  width: 70%;
+  margin-left: 22.5%;
+  margin-right: 7.5%;
+  padding-top: 30px;
+}
+
+.pages_container h1 {
+  width: 100%;
+  height: 50%;
+  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: left;
+
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.scrolling_table {
+  border: solid 2px #555;
+}
+
+.pages_table {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+
+  font-size: 12px;
+  border: solid 2px #555;
+}
+
+.pages_table th,
+td {
+  padding: 5px 20px;
+
+  border: solid 2px #555;
+  color: black;
+  background-color: #fefefe;
+}
+
+.pages_table th {
+  background-color: #84c3c9;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pages_table td {
+  border: solid 1px #d9d4da;
+}
+
+.pages_pic_div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+
+.pages_pic_div label {
+  font-size: 20px;
+  padding: 5px 30px;
+
+  align-items: center;
+  text-align: center;
+  background-color: #fefefe;
+  border: solid 2px #0e7995;
+  border-radius: 50px;
+  color: #0e7995;
+}
+
+.pages_table img {
+  width: 100%;
+  height: 100%;
+
+  margin: 10px 0px;
+  box-shadow: -1px 3px #698ca1;
+}
+
+.button_row {
+  width: 100%;
+  text-align: center;
+}
+
+.add_button {
+  padding: 3px 30px;
+  text-align: center;
+  background-color: #35a2a9;
+  border: none;
+  border-radius: 50px;
+
+  font-size: 15px;
+  color: #fefefe;
+}
+
+.add_button:hover {
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+/*Admin add css*/
+
+.pages_add_div {
+  margin-left: 25%;
+  margin-right: 10%;
+  padding-top: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  background-color: #fefefe;
+}
+
+.pages_add_div h1 {
+  width: 60%;
+  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: left;
+
+  font-size: 25px;
+  font-weight: normal;
+}
+
+.pages_add_div form {
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20%;
+
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  border: solid 1px #ccc;
+
+  font-size: 15px;
+}
+
+.name_email_div {
+  width: 100%;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.name_email_div label,
+input {
+  margin-right: 10px;
+}
+
+.pages_add_div input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.pages_add_div label {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.pages_add_div textarea {
+  padding: 5px;
+  margin-bottom: 10px;
+  resize: none;
+}
+
+.pages_add_div input[type="file"] {
+  margin-right: 0px;
+}
+
+.pages_add_div input[type="file"]::file-selector-button {
+  padding: 5px 15px;
+  margin-right: 20px;
+  background-color: #35a2a9;
+  border: none;
+  border-radius: 10px;
+
+  font-size: 15px;
+  color: #fefefe;
+}
+
+.upload_pic_div {
+  display: flex;
+  align-items: center;
+  border: solid 1px #ccc;
+  margin-bottom: 10px;
+}
+
+.upload_pic_div label {
+  width: 30%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.upload_pic_div input {
+  margin-bottom: 0;
+  padding: 10px 20px;
+}
+
+.upload_pic_div img {
+  width: 20%;
+}
+
+.pages_button {
+  width: 30%;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.pages_button button {
+  padding: 3px 30px;
+  text-align: center;
+  background-color: #35a2a9;
+  border: none;
+  border-radius: 50px;
+
+  font-size: 15px;
+  color: #fefefe;
+}
+
+.pages_button button:hover {
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.pages_add_button {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pages_add_button input[type="submit"],
+input[type="reset"] {
+  text-align: center;
+  margin: 0px 20px;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.pages_add_div input[type="submit"],
+input[type="reset"] {
+  padding: 5px 20px;
+  align-items: center;
+  text-align: center;
+  background-color: #35a2a9;
+  border: none;
+  border-radius: 50px;
+
+  font-size: 15px;
+  color: #fefefe;
+}
+
+.pages_add_div input[type="submit"]:hover,
+input[type="reset"]:hover {
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.pages_add_div button {
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 20px;
+  text-align: center;
+  background-color: #fefefe;
+  border: solid 1px #35a2a9;
+  border-radius: 50px;
+
+  font-size: 15px;
+  color: #35a2a9;
+}
+
+.pages_add_div button:hover {
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  background-color: #35a2a9;
+  color: #fefefe;
+  border: none;
+  opacity: 0.5;
+}
+
+.pages_button_action a {
+  padding: 3px 20px;
+  text-align: center;
+  background-color: #35a2a9;
+  border: none;
+  border-radius: 50px;
+
+  text-decoration: none;
+  font-size: 15px;
+  color: #fefefe;
+}
+
+.pages_button_action button:hover {
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+
+  background-color: #35a2a9;
+  opacity: 1;
+}

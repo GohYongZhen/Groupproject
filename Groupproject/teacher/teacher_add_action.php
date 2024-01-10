@@ -9,7 +9,7 @@ $tc_desc = "";
 $tc_pic = "";
 
 //for upload
-$target_dir = "";
+$target_dir = "img/";
 $target_file = "";
 $uploadOk = 0;
 $imageFileType = "";
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          //uploadOK=1 if there is image to be uploaded, filename not exists, file size is ok and format ok
          if($uploadOk){
              $sql = "INSERT INTO teacher (tc_name, tc_desc, tc_email, tc_pic)
-                 VALUES ('".$tc_name."','".$tc_desc."','".$tc_email."','". $target_file."')";
+                 VALUES ('".$tc_name."','".$tc_desc."','".$tc_email."','". $uploadfileName."')";
              
              $status = insertTo_DBTable($conn, $sql);
              if ($status) {

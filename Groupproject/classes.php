@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('config.php');
 ?>
 
@@ -18,49 +19,50 @@ include('config.php');
 
 <body>
 <?php include('header.php');?>
-
+  <?php echo "help me"?>
 <div class="page-header">
-<h1>Classes</h1>
- </div>
+  <h1>Classes</h1>
+</div>
 
  <?php
-        $sql = "SELECT class.*, teacher.*
-        FROM class
-        INNER JOIN teacher ON class.teacher_id = teacher.teacher_id";
-        $result = mysqli_query($conn, $sql);
+  $sql = "SELECT * FROM class INNER JOIN teacher ON class.teacher_id = teacher.teacher_id";
+  $result = mysqli_query($conn, $sql);
+  echo "hihi";
+  while ($row = mysqli_fetch_assoc($result)){
+    echo "hihi";
+      ?>
+      
+    <div class="word">
 
-        while ($row = mysqli_fetch_assoc($result)){
-           ?>
-           
-<div class="word">
+      <div class="row">
+        <div class="leftcolumn">
 
-<div class="row">
-      <div class="leftcolumn">
-
-        <div class="card">
-          <h2><?php echo $row['cl_name']?></h2> 
-          <h3 class="img1">Teacher: <?php echo $row['tc_name']?></h3>
-          <div class="img1">
-            <img src="teacher/<?php echo $row['cl_photo']?>" alt="Real Image" class="realimg" />
-			<table class="table" ; width="70%">
-				<tr class="c_up">
-					<th width="50%">Age Range</th>
-					<th width="50%">Time</th>
-				</tr>
-				<tr class="c_down">
-				<td><?php echo $row['cl_agegroup']?></td>
-				<td><?php echo $row['cl_time']?></td>
-				</tr>
-			</table>
+          <div class="card">
+            <h2><?php echo $row['cl_name']?></h2> 
+            <h3 class="img1">Teacher: <?php echo $row['tc_name']?></h3>
+            <div class="img1">
+              <img src="class/img/<?php echo $row['cl_photo']?>" alt="Real Image" class="realimg" />
+              <table class="table" style="width:70%">
+                <tr class="c_up">
+                  <th width="50%">Age Range</th>
+                  <th width="50%">Time</th>
+                </tr>
+                <tr class="c_down">
+                  <td><?php echo $row['cl_agegroup']?></td>
+                  <td><?php echo $row['cl_time']?></td>
+                </tr>
+              </table>
+            </div>
           </div>
-        </div>
+      
     
-  
+        </div>
       </div>
-    </div>
-</div>    
-       <?php 
-       }   
+    </div>    
+  <?php 
+
+  }   
+mysqli_close($conn);
 ?>
 
 <?php include('footer.php');?> 
