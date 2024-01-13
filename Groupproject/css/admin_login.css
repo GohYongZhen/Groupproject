@@ -1,15 +1,14 @@
 .page-header {
-  color: #ffffff;
   background-color: #e15232;
   background-size: cover;
   font-size: 30px;
   text-align: center;
-  padding: 4rem;
+  line-height: 150px;
+  padding: 0rem;
   height: 170px;
-  width: 1500px;
+  width: 100%;
   margin: 20px auto;
 }
-
 h2 {
   color: #020c37;
 }
