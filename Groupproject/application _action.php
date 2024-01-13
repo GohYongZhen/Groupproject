@@ -9,7 +9,7 @@ $contact="";
 $email="";
 $age="";
 $birthday="";
-$status="";
+$status="Unreview";
 $nationality="";
 //for upload
 $target_dir = "uploads/";
@@ -26,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contact = $_POST["contact"];
     $age = $_POST["age"];
     $birthday= $_POST["birthday"];
-    $status = $_POST["status"];
     $nationality = $_POST["nationality"];
     
     $filetmp = $_FILES["file"];

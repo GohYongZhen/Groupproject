@@ -11,7 +11,7 @@ $status = "";
 $nationality = "";
 
 // for upload
-$target_dir = "uploads/"; 
+$target_dir = "../uploads/"; 
 $target_file = ""; 
 $uploadOk = 0; 
 $fileType = ""; 
@@ -109,7 +109,7 @@ if ($status) {
                 $file = $row['ja_resume'];
 
                 // Delete the file from the uploads folder
-                $delete_file_path = 'uploads/' . $file;
+                $delete_file_path = '../uploads/' . $file;
 
                 if (!empty($file) && file_exists($delete_file_path)) {
                     if (unlink($delete_file_path)) {

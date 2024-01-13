@@ -23,10 +23,12 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 25px 10% 0% 10%;
+  padding: 10px 50px;
 }
 
 .logo {
+  width: 20%;
+  height: 50%;
   cursor: pointer;
   margin-right: auto;
 }
@@ -42,6 +44,7 @@ header {
 
 .nav_links li a {
   transition: all 0.3s ease 0s;
+  
 }
 
 .nav_links li a:hover {

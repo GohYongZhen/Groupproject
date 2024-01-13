@@ -18,7 +18,7 @@ include("../config.php");
 <body>
     <?php include('../admin_header.php');?>
     
-    <h2>Edit INFO</h2> 
+    <h2 style="margin-left:25%">Edit INFO</h2> 
     <?php 
             $id=null;
 				$father_name="";
@@ -264,8 +264,6 @@ include("../config.php");
                             <button type="submit" value="Submit" class="btn">Update </button>  
                             
                             <button type="reset" value="Reset" class="btn" onclick="resetForm()" >Reset </button>  
-                           
-                            <button type="button" value="Clear" class="btn" onclick="resetForm()">Clear </button>  
                            
                             <button type="button" class="btn" onclick="goBack()">Go Back</button>
                          </div>

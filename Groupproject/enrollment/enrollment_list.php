@@ -19,20 +19,18 @@ include("../config.php");
 <body onload="makeTableScroll()">
    
 <?php include('../admin_header.php');?>
-    <h2>LIST OF STUDENT ENROLLMENT</h2> 
+    <h2 style="padding: 0px 20px">LIST OF STUDENT ENROLLMENT</h2> 
       
         
 
         <div class="content" style="padding:0 10px;">
-			<div style="text-align: right; padding:10px;">
-				
-			</div>
+
 			<div class="scrolling_table">
 			<table border="1" width="100%" id="projectable">
 				<tr>
 					<th width="3%">No</th> 
-					<th width="10%">Child Name</th> 
-					<th width="3%">Age</th> 
+					<th width="5%">Child Name</th> 
+					<th width="8%">Age</th> 
 					<th width="8%">Birthday</th>
 					<th width="10%">Program</th> 
                     <th width="8%">Time</th>
@@ -71,7 +69,7 @@ include("../config.php");
 						}
 					}
 					else{
-						echo '<tr><td colspan="7">0 results</td></tr>';
+						echo '<tr><td colspan="9">0 results</td></tr>';
 					}
 
 					mysqli_close($conn);
@@ -84,7 +82,7 @@ include("../config.php");
 
 		function makeTableScroll() {
         // Constant retrieved from server-side via JSP
-			var maxRows = 4;
+			var maxRows = 3;
 
 			var table = document.getElementById("projectable");
 			var wrapper = table.parentNode;

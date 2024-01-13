@@ -136,16 +136,17 @@ include("../config.php");
                 <span class="custom-label">Satus:</span>
                 
                 <select name="status" id="status" reuired>
-                    <option value="" ><?php echo $status;?></option>
                     <?php
-                                $status = array(
-                                "Single",
-                                "Married",
-                                "Divorced",
+                                $status_arr = array(
+                                "Reviewed", "Reject", "Unreview"
                                 );
                     // Loop through the nationalities array to generate options
-                    foreach ($status as $status) {
-                        echo "<option value=\"$status\">$status</option>";
+                    foreach ($status_arr as $status_option) {
+                        echo '<option value="'.$status_option.'" '; 
+                        if($status == $status_option){
+                            echo "selected";
+                        }        
+                        echo '>'.$status_option.'</option>';
                     }
                     ?>
                 </select>                         
@@ -158,10 +159,10 @@ include("../config.php");
                 <span class="custom-label">Nationalities:</span>
                 
                 <select name="nationality" id="nationality" required>
-                    <option value="" ><?php echo $nationality;?></option>
+
                     <?php
 
-                                $nationality = array(
+                                $nationality_arr = array(
                                     "Afghan",
                                     "Albanian",
                                     "Algerian",
@@ -212,9 +213,14 @@ include("../config.php");
                                         // Add more nationalities as needed
                                     );
                     // Loop through the nationalities array to generate options
-                    foreach ($nationality as $nationality) {
-                        echo "<option value=\"$nationality\">$nationality</option>";
+                    foreach ($nationality_arr as $nationality_option) {
+                        echo '<option value="'.$nationality_option.'" '; 
+                        if($nationality == $nationality_option){
+                            echo "selected";
+                        }        
+                        echo '>'.$nationality_option.'</option>';
                     }
+                    
                     ?>
                 </select>
                 

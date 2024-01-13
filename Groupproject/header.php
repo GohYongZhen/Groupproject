@@ -24,7 +24,5 @@
         <a href="contact.php"><button class="contact-button">Contact</button></a>
         <a href="enrollment.php"><button class="enroll-button">Enroll Now</button></a>
     </header>
-
-
  </body>
 </html>

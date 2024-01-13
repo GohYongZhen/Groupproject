@@ -17,178 +17,118 @@ include("config.php");
             alert(message);
         }
     </script>
-    <?php include('header.php'); ?>
 </head>
   <body>
-        
+    <?php include('header.php'); ?>
 
-        <hr></hr>
+    <h1 class="content">WELCOME ! <br> <span style="color: #20bcd0;">JOIN OUR TEAM NOW.</span></h1>    
         
-        <div class="content" >
-            <h1>WELCOME ! <br> <span style="color: #20bcd0;">JOIN OUR TEAM NOW.</span></h1>
-            
-            </div>
-        
-        <div>
-    <form style="padding:0 10px;" method="POST" action="application _action.php" enctype="multipart/form-data"  onsubmit="return validateForm()" id="myForm">
-       
+    <form method="POST" action="application _action.php" enctype="multipart/form-data"  onsubmit="return validateForm()" id="myForm">
+
              <div class="form-container">
-      
+                <h2 style="margin:5px">Application Form</h2>
+                <div class="input_row">
                     <tr>
                         <span class="custom-label">Name:</span>
-                        <p></p>
                         <input type="text" name="ja_name" id="ja_name">
-                        <p></p>
-                    </tr>
 
-        
-
-                    <tr>
-            
                         <span class="custom-label">Email:</span>
-                        <p></p>
                         <input type="text" name="email" id="email">
-                        <p></p>
-                        <span class="custom-label">Contact:  </span> 
-                        <p>*Please PUT +6 In front Of Contact</p>
-                        <p></p>
-                    <input type="text" name="contact" id="contact">
-                    <p></p>
-        
+
+                        <span class="custom-label">Age:</span>
+                              <input type="number" name="age" >
             
-                    </tr>
-      
+                    </tr>    
+                </div>
 
+                <div class="input_row">
                     <tr>
-                            <span class="custom-label">Age:</span>
-                            <p></p>
-                            <input type="number" name="age" >
-                            <p></p>
-                    </tr>
-
-                    <tr>
-                        <span class="custom-label">Birthday:</span>
-                        <p></p>
+                        <br>
+                        <span class="custom-label">Birthday:</span>                        
                         <input type="date" name="birthday">
-                        <p></p>
-                    </tr>
 
-
-       
-                    <tr>
-                        <span class="custom-label">Status:</span>
-                        <p></p>
-                        <select name="status" id="status">
-                        <option value="" disabled selected>---</option>
-                        <?php
-                        // Array of status (you can expand this list)
-                                $status = array(
-                                "Single",
-                                "Married",
-                                "Divorced",
-                                
+                        <span class="custom-label">Contact:  </span>                   
+                        <input type="text" name="contact" id="contact" placeholder="+601X XXX XXXX">
+                    
+                        <span class="custom-label">Nationalities:</span>
+                            <select name="nationality" id="nationality">
+                            <option value="" disabled selected>---</option>
+                                <?php
+                                // Array of nationalities (you can expand this list)
+                                $nationality = array(
+                                "Afghan",
+                                "Albanian", 
+                                "Algerian",
+                                "American",
+                                "Bahamian",
+                                "Bahraini",
+                                "Bangladeshi",
+                                "Barbadian",
+                                "Cambodian",
+                                "Cameroonian",
+                                "Canadian",
+                                "Cape Verdean",
+                                "Chinese",
+                                "Indian",
+                                "Indonesian",
+                                "Iranian",
+                                "Iraqi",
+                                "Israeli",
+                                "Japanese",
+                                "Jordanian",
+                                "Kazakhstani",
+                                "Kuwaiti",
+                                "Laotian",
+                                "Lebanese",
+                                "Malaysian",
+                                "Maldivian",
+                                "Mongolian",
+                                "Nepali",
+                                "North Korean",
+                                "Omani",
+                                "Pakistani",
+                                "Palestinian",
+                                "Qatari",
+                                "Saudi Arabian",
+                                "Singaporean",
+                                "South Korean",
+                                "Sri Lankan",
+                                "Syrian",
+                                "Taiwanese",
+                                "Tajikistani",
+                                "Thai",
+                                "Turkish",
+                                "Turkmen",
+                                "Emirati",
+                                "Uzbekistani",
+                                "Vietnamese",
+                                "Yemeni"
+                                    // Add more nationalities as needed
                                 );
 
-                        // Loop through the status array to generate options
-                        foreach ($status as $status) {
-                            echo "<option value=\"$status\">$status</option>";
-                        }
-                        ?>
-                        </select>
-                        <br>
-        
-                    </tr>
-            
-      
-           
-                        <tr>
-                            <p></p>
-                            <span class="custom-label">Nationalities:</span>
-                            <p></p>
-                                <select name="nationality" id="nationality">
-                                <option value="" disabled selected>---</option>
-                                    <?php
-                                    // Array of nationalities (you can expand this list)
-                                    $nationality = array(
-                                    "Afghan",
-                                    "Albanian",
-                                    "Algerian",
-                                    "American",
-                                    "Bahamian",
-                                    "Bahraini",
-                                    "Bangladeshi",
-                                    "Barbadian",
-                                    "Cambodian",
-                                    "Cameroonian",
-                                    "Canadian",
-                                    "Cape Verdean",
-                                    "Chinese",
-                                    "Indian",
-                                    "Indonesian",
-                                    "Iranian",
-                                    "Iraqi",
-                                    "Israeli",
-                                    "Japanese",
-                                    "Jordanian",
-                                    "Kazakhstani",
-                                    "Kuwaiti",
-                                    "Laotian",
-                                    "Lebanese",
-                                    "Malaysian",
-                                    "Maldivian",
-                                    "Mongolian",
-                                    "Nepali",
-                                    "North Korean",
-                                    "Omani",
-                                    "Pakistani",
-                                    "Palestinian",
-                                    "Qatari",
-                                    "Saudi Arabian",
-                                    "Singaporean",
-                                    "South Korean",
-                                    "Sri Lankan",
-                                    "Syrian",
-                                    "Taiwanese",
-                                    "Tajikistani",
-                                    "Thai",
-                                    "Turkish",
-                                    "Turkmen",
-                                    "Emirati",
-                                    "Uzbekistani",
-                                    "Vietnamese",
-                                    "Yemeni"
-                                        // Add more nationalities as needed
-                                    );
-
-                                    // Loop through the nationalities array to generate options
-                                    foreach ($nationality as $nationality) {
-                                        echo "<option value=\"$nationality\">$nationality</option>";
-                                    }
-                                    ?>
+                                // Loop through the nationalities array to generate options
+                                foreach ($nationality as $nationality) {
+                                    echo "<option value=\"$nationality\">$nationality</option>";
+                                }
+                                ?>
                                 </select>
-                                <br>
-                            <p></p>
-        
-        
                                 </tr>
-        
+                </div>
 
     
                         <tr >
                             <span class="custom-label">UploadYourResume</span>
-                            <p></p>
+                            
                             <input type="file" name="file" id="file" required>
                             <br>
-                            <p></p>
+                            
                             <button type="submit" name="submit" class="btn">Send<i class="fas fa-paper-plane"></i></button>   
                         </tr>
+             </div>
 </form>
-
-           
-                </div>
     
     
-                               
+<?php include('footer.php');?>                             
                         
 
 <script>
@@ -226,6 +166,6 @@ include("config.php");
 
 
 
-        <?php include('footer.php');?>
+
 </body>
 </html>

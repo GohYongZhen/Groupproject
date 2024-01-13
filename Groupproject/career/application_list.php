@@ -66,7 +66,7 @@ include("../config.php");
 						}
 					}
 					else{
-						echo '<tr><td colspan="7">0 results</td></tr>';
+						echo '<tr><td colspan="11">0 results</td></tr>';
 					}
 
 					mysqli_close($conn);

@@ -25,7 +25,7 @@ include("../config.php");
           $new_message=0;
 
           /*Count new enrol*/
-          $sql ="SELECT COUNT(enrol_status) AS new_enrol FROM enrollment WHERE enrol_status='new';";
+          $sql ="SELECT COUNT(enrol_status) AS new_enrol FROM enrollment WHERE enrol_status='Unreview';";
           $result = mysqli_query($conn, $sql);
 
           if ($result) {
@@ -38,7 +38,7 @@ include("../config.php");
           }
 
           /*Count new job application*/
-          $sql ="SELECT COUNT(ja_status) AS new_ja FROM application WHERE ja_status='new';";
+          $sql ="SELECT COUNT(ja_status) AS new_ja FROM application WHERE ja_status='Unreview';";
           $result = mysqli_query($conn, $sql);
 
           if ($result) {    
@@ -66,7 +66,7 @@ include("../config.php");
           mysqli_close($conn); 
         ?>
 
-        <a href="../enrolment/enrolment.php">
+        <a href="../enrollment/enrollment_list.php">
           <div class="noti">
             <div style="height:150px">
               <img src="img/enrol.png" alt="enrol">
@@ -77,7 +77,7 @@ include("../config.php");
           </div>
         </a>      
 
-        <a href="../application/application.php">
+        <a href="../career/application_list.php">
           <div class="noti">
             <div style="height:150px">
               <img src="img/application.png" alt="application">
