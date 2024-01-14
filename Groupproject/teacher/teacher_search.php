@@ -74,7 +74,7 @@ include("../config.php");
                                     echo'<tr>
                                     <td>
                                         <div class="teacher_pic_div"">
-                                            <img src="'.$row["tc_pic"].'">
+                                            <img src="img/'.$row["tc_pic"].'">
                                             <label for="tc_name">'.$row["tc_name"]. '</label>
                                         </div>
                                     </td>
